@@ -1,0 +1,1174 @@
+﻿<!DOCTYPE html>
+<html class="theme theme-white">
+<head>
+<meta charset="utf-8">
+<title>旅行社 v1.0.2（20160404）</title>
+<link href="https://www.zybuluo.com/static/assets/template-theme-white.css" rel="stylesheet" media="screen">
+</head>
+<body class="theme theme-white">
+<div id="wmd-preview" class="wmd-preview wmd-preview-full-reader"><div class="md-section-divider"></div><div class="md-section-divider"></div><h1 data-anchor-id="ld0k" id="旅行社-v10220160404">旅行社 v1.0.2（20160404）</h1><p data-anchor-id="ho0o"><code>旅行社</code> <code>PC</code> <code>v1.0.2</code> <code>分销</code> <code>住宿</code></p><hr><table data-anchor-id="jjzr" class="table table-striped-white table-bordered">
+<thead>
+<tr>
+ <th>日期</th>
+ <th>版本号</th>
+ <th>修订者</th>
+ <th>描述</th>
+ <th>修改记录</th>
+</tr>
+</thead>
+<tbody><tr>
+ <td>2016-02-15</td>
+ <td>v1.0.1</td>
+ <td>赵锴</td>
+ <td>此为旅行社PC端住宿单产品与组合产品的采购模块</td>
+ <td>初版</td>
+</tr>
+</tbody></table><p data-anchor-id="wm4q"><br>
+修订记录：</p><table data-anchor-id="u2ei" class="table table-striped-white table-bordered">
+<thead>
+<tr>
+ <th>日期</th>
+ <th>版本号</th>
+ <th>修订者</th>
+ <th>修订记录</th>
+</tr>
+</thead>
+<tbody><tr>
+ <td>2016-04-04</td>
+ <td>v1.0.2</td>
+ <td>徐璐</td>
+ <td>根据新的业务逻辑修改了住宿相关产品的界面呈现及下单流程</td>
+</tr>
+</tbody></table><p data-anchor-id="2bf7"><br>
+需求提供方确认记录：</p><table data-anchor-id="0ik0" class="table table-striped-white table-bordered">
+<thead>
+<tr>
+ <th>确认人</th>
+ <th>确认时间</th>
+ <th>确认方式</th>
+ <th>确认内容</th>
+ <th>确认结果</th>
+</tr>
+</thead>
+<tbody><tr>
+ <td>--</td>
+ <td>--</td>
+ <td>--</td>
+ <td>--</td>
+ <td></td>
+</tr>
+</tbody></table><p data-anchor-id="cqwp"><br>
+开发同事确认记录：</p><table data-anchor-id="nij7" class="table table-striped-white table-bordered">
+<thead>
+<tr>
+ <th>确认人</th>
+ <th>确认时间</th>
+ <th>确认方式</th>
+ <th>确认内容</th>
+ <th>确认结果</th>
+</tr>
+</thead>
+<tbody><tr>
+ <td>--</td>
+ <td>--</td>
+ <td>--</td>
+ <td>--</td>
+ <td></td>
+</tr>
+</tbody></table><p data-anchor-id="pyfb"><br>
+注：PRD在线网址：<a href="https://www.zybuluo.com/leanjoker/note/331469" target="_blank">https://www.zybuluo.com/leanjoker/note/331469</a> （密码：joker）</p><hr><p data-anchor-id="tbzb"><div class="toc"><div class="toc">
+<ul>
+<li><a href="#旅行社-v10220160404">旅行社 v1.0.2（20160404）</a><ul>
+<li><a href="#一简介">一、简介</a><ul>
+<li><a href="#1-目的">1. 目的</a></li>
+<li><a href="#2-范围">2. 范围</a></li>
+</ul>
+</li>
+<li><a href="#二用户角色描述">二、用户角色描述</a></li>
+<li><a href="#三产品概述">三、产品概述</a><ul>
+<li><a href="#1-目标">1. 目标</a></li>
+<li><a href="#2-功能摘要">2. 功能摘要</a></li>
+</ul>
+</li>
+<li><a href="#四功能详解">四、功能详解</a><ul>
+<li><a href="#1-分销商-住宿">1. 分销商-住宿</a><ul>
+<li><a href="#11-功能概述">1.1 功能概述</a></li>
+<li><a href="#12-功能摘要">1.2 功能摘要</a></li>
+<li><a href="#13-功能说明">1.3 功能说明</a></li>
+<li><a href="#131-搜索门店">1.3.1 搜索门店</a><ul>
+<li><a href="#1需求描述">（1）需求描述</a></li>
+<li><a href="#2输入条件">（2）输入条件</a></li>
+<li><a href="#3界面原型">（3）界面原型</a></li>
+<li><a href="#4对应字段">（4）对应字段</a></li>
+<li><a href="#5交互动作">（5）交互动作</a></li>
+<li><a href="#6相关规则">（6）相关规则</a></li>
+<li><a href="#7-判定条件及提示">（7） 判定条件及提示</a></li>
+</ul>
+</li>
+<li><a href="#132-展示景区热门客栈列表">1.3.2 展示景区热门客栈列表</a><ul>
+<li><a href="#1需求描述-1">（1）需求描述</a></li>
+<li><a href="#2界面原型">（2）界面原型</a></li>
+<li><a href="#3对应字段">（3）对应字段</a></li>
+<li><a href="#4交互动作">（4）交互动作</a></li>
+<li><a href="#5相关规则">（5）相关规则</a></li>
+</ul>
+</li>
+<li><a href="#133-展示门店搜索结果">1.3.3 展示门店搜索结果</a><ul>
+<li><a href="#1需求描述-2">（1）需求描述</a></li>
+<li><a href="#2前置条件">（2）前置条件</a></li>
+<li><a href="#3界面原型-1">（3）界面原型</a></li>
+<li><a href="#4对应字段-1">（4）对应字段</a></li>
+<li><a href="#5交互动作-1">（5）交互动作</a></li>
+<li><a href="#6相关规则-1">（6）相关规则</a></li>
+</ul>
+</li>
+<li><a href="#134-筛选门店">1.3.4 筛选门店</a><ul>
+<li><a href="#1需求描述-3">（1）需求描述</a></li>
+<li><a href="#2界面原型-1">（2）界面原型</a></li>
+<li><a href="#3对应字段-1">（3）对应字段</a></li>
+<li><a href="#4交互动作-1">（4）交互动作</a></li>
+</ul>
+</li>
+<li><a href="#135-客栈详情">1.3.5 客栈详情</a><ul>
+<li><a href="#1需求描述-4">（1）需求描述</a></li>
+<li><a href="#2界面原型-2">（2）界面原型</a></li>
+<li><a href="#3对应字段-2">（3）对应字段</a></li>
+<li><a href="#4交互动作-2">（4）交互动作</a></li>
+<li><a href="#5相关规则-1">（5）相关规则</a></li>
+</ul>
+</li>
+<li><a href="#136-下单">1.3.6 下单</a><ul>
+<li><a href="#1需求描述-5">（1）需求描述</a></li>
+<li><a href="#2操作流程">（2）操作流程</a></li>
+<li><a href="#3界面原型-2">（3）界面原型</a></li>
+<li><a href="#4对应字段-2">（4）对应字段</a></li>
+<li><a href="#5交互动作-2">（5）交互动作</a></li>
+<li><a href="#6相关规则-2">（6）相关规则</a></li>
+<li><a href="#7判定条件及提示">（7）判定条件及提示</a></li>
+</ul>
+</li>
+<li><a href="#137-支付">1.3.7 支付</a><ul>
+<li><a href="#1需求描述-6">（1）需求描述</a></li>
+<li><a href="#2界面原型-3">（2）界面原型</a></li>
+<li><a href="#3对应字段-3">（3）对应字段</a></li>
+<li><a href="#4交互动作-3">（4）交互动作</a></li>
+<li><a href="#5相关规则-2">（5）相关规则</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#2-分销商-住宿">2. 分销商-住宿</a><ul>
+<li><a href="#21-功能概述">2.1 功能概述</a></li>
+<li><a href="#22-功能摘要">2.2 功能摘要</a></li>
+<li><a href="#23-功能说明">2.3 功能说明</a></li>
+<li><a href="#231-搜索组合产品">2.3.1 搜索组合产品</a><ul>
+<li><a href="#1需求描述-7">（1）需求描述</a></li>
+<li><a href="#2输入条件-1">（2）输入条件</a></li>
+<li><a href="#3界面原型-3">（3）界面原型</a></li>
+<li><a href="#4对应字段-3">（4）对应字段</a></li>
+<li><a href="#5交互动作-3">（5）交互动作</a></li>
+<li><a href="#6-判定条件及提示">（6） 判定条件及提示</a></li>
+</ul>
+</li>
+<li><a href="#232-展示景区热门组合产品列表">2.3.2 展示景区热门组合产品列表</a><ul>
+<li><a href="#1需求描述-8">（1）需求描述</a></li>
+<li><a href="#2界面原型-4">（2）界面原型</a></li>
+<li><a href="#3对应字段-4">（3）对应字段</a></li>
+<li><a href="#4交互动作-4">（4）交互动作</a></li>
+<li><a href="#5相关规则-3">（5）相关规则</a></li>
+</ul>
+</li>
+<li><a href="#233-展示组合产品搜索结果">2.3.3 展示组合产品搜索结果</a><ul>
+<li><a href="#1需求描述-9">（1）需求描述</a></li>
+<li><a href="#2前置条件-1">（2）前置条件</a></li>
+<li><a href="#3界面原型-4">（3）界面原型</a></li>
+<li><a href="#4对应字段-4">（4）对应字段</a></li>
+<li><a href="#5交互动作-4">（5）交互动作</a></li>
+<li><a href="#6相关规则-3">（6）相关规则</a></li>
+</ul>
+</li>
+<li><a href="#234-筛选组合产品">2.3.4 筛选组合产品</a><ul>
+<li><a href="#1需求描述-10">（1）需求描述</a></li>
+<li><a href="#2界面原型-5">（2）界面原型</a></li>
+<li><a href="#3对应字段-5">（3）对应字段</a></li>
+<li><a href="#4交互动作-5">（4）交互动作</a></li>
+</ul>
+</li>
+<li><a href="#235-组合产品详情">2.3.5 组合产品详情</a><ul>
+<li><a href="#1需求描述-11">（1）需求描述</a></li>
+<li><a href="#2界面原型-6">（2）界面原型</a></li>
+<li><a href="#3对应字段-6">（3）对应字段</a></li>
+<li><a href="#4交互动作-6">（4）交互动作</a></li>
+<li><a href="#5相关规则-4">（5）相关规则</a></li>
+</ul>
+</li>
+<li><a href="#236-下单">2.3.6 下单</a><ul>
+<li><a href="#1需求描述-12">（1）需求描述</a></li>
+<li><a href="#2操作流程-1">（2）操作流程</a></li>
+<li><a href="#3界面原型-5">（3）界面原型</a></li>
+<li><a href="#4对应字段-5">（4）对应字段</a></li>
+<li><a href="#5交互动作-5">（5）交互动作</a></li>
+<li><a href="#6相关规则-4">（6）相关规则</a></li>
+</ul>
+</li>
+<li><a href="#237-支付">2.3.7 支付</a><ul>
+<li><a href="#1需求描述-13">（1）需求描述</a></li>
+<li><a href="#2界面原型-7">（2）界面原型</a></li>
+<li><a href="#3对应字段-7">（3）对应字段</a></li>
+<li><a href="#4交互动作-7">（4）交互动作</a></li>
+<li><a href="#5相关规则-5">（5）相关规则</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#3-分销商-我的订单">3. 分销商-我的订单</a><ul>
+<li><a href="#31-功能概述">3.1 功能概述</a></li>
+<li><a href="#32-功能摘要">3.2 功能摘要</a></li>
+<li><a href="#33-流程及状态说明">3.3 流程及状态说明</a></li>
+<li><a href="#34-功能说明">3.4 功能说明</a></li>
+<li><a href="#341-搜索订单">3.4.1 搜索订单</a><ul>
+<li><a href="#1需求描述-14">（1）需求描述</a></li>
+</ul>
+</li>
+<li><a href="#342-住宿订单列表">3.4.2 住宿订单列表</a><ul>
+<li><a href="#1需求描述-15">（1）需求描述</a></li>
+<li><a href="#2界面原型-8">（2）界面原型</a></li>
+<li><a href="#3对应字段-8">（3）对应字段</a></li>
+<li><a href="#5交互动作-6">（5）交互动作</a></li>
+<li><a href="#6相关规则-5">（6）相关规则</a></li>
+</ul>
+</li>
+<li><a href="#343-住宿订单详情">3.4.3 住宿订单详情</a><ul>
+<li><a href="#1需求描述-16">（1）需求描述</a></li>
+<li><a href="#2界面原型-9">（2）界面原型</a></li>
+<li><a href="#3对应字段-9">（3）对应字段</a></li>
+<li><a href="#5交互动作-7">（5）交互动作</a></li>
+</ul>
+</li>
+<li><a href="#344-住宿订单退款">3.4.4 住宿订单退款</a><ul>
+<li><a href="#1需求描述-17">（1）需求描述</a></li>
+<li><a href="#2操作流程-2">（2）操作流程</a></li>
+<li><a href="#3界面原型-6">（3）界面原型</a></li>
+<li><a href="#4对应字段-6">（4）对应字段</a></li>
+<li><a href="#5交互动作-8">（5）交互动作</a></li>
+<li><a href="#6相关规则-6">（6）相关规则</a></li>
+</ul>
+</li>
+<li><a href="#345-住宿门票订单列表">3.4.5 住宿+门票订单列表</a><ul>
+<li><a href="#1需求描述-18">（1）需求描述</a></li>
+<li><a href="#2界面原型-10">（2）界面原型</a></li>
+<li><a href="#3对应字段-10">（3）对应字段</a></li>
+<li><a href="#5交互动作-9-1">（5）交互动作</a></li>
+<li><a href="#6相关规则-6-1">（6）相关规则</a></li>
+</ul>
+</li>
+<li><a href="#346-住宿门票订单详情">3.4.6 住宿+门票订单详情</a><ul>
+<li><a href="#1需求描述-19">（1）需求描述</a></li>
+<li><a href="#2界面原型-11">（2）界面原型</a></li>
+<li><a href="#3对应字段-11">（3）对应字段</a></li>
+<li><a href="#5交互动作-10">（5）交互动作</a></li>
+</ul>
+</li>
+<li><a href="#347-住宿门票订单退款">3.4.7 住宿+门票订单退款</a><ul>
+<li><a href="#1需求描述-20">（1）需求描述</a></li>
+<li><a href="#2操作流程-3">（2）操作流程</a></li>
+<li><a href="#3界面原型-7">（3）界面原型</a></li>
+<li><a href="#4对应字段-7">（4）对应字段</a></li>
+<li><a href="#5交互动作-11">（5）交互动作</a></li>
+<li><a href="#6相关规则-7">（6）相关规则</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</p><div class="md-section-divider"></div><h2 data-anchor-id="m7pr" id="一简介">一、简介</h2><div class="md-section-divider"></div><h3 data-anchor-id="l9cx" id="1-目的">1. 目的</h3><p data-anchor-id="wwxy">旅行社PC端重构版是一款给旅行社和旅行社部门提供进行旅游目的地资源包括景点门票、演艺门票、景区客栈、当地特产等采购，游客管理，报表对账等功能，以提高其资源分配、团员管理、报对账效率的客户端。</p><div class="md-section-divider"></div><h3 data-anchor-id="7ex4" id="2-范围">2. 范围</h3><p data-anchor-id="nh98">本需求文档针对旅行社PC的住宿单产品以及住宿+门票的分销这一部分进行需求的分销与说明。</p><div class="md-section-divider"></div><h2 data-anchor-id="lfib" id="二用户角色描述">二、用户角色描述</h2><table data-anchor-id="gg47" class="table table-striped-white table-bordered">
+<thead>
+<tr>
+ <th>用户角色</th>
+ <th>用户描述</th>
+</tr>
+</thead>
+<tbody><tr>
+ <td>旅行社</td>
+ <td>指拥有旅行社所有资质的机构</td>
+</tr>
+<tr>
+ <td>部门</td>
+ <td>指可行使旅行社所有权利，但没有旅行社资质的机构，这些机构如果想行使旅行社的权利，必须挂靠旅行社</td>
+</tr>
+<tr>
+ <td>导游</td>
+ <td>负责具体执行带团任务的角色，需要挂靠旅行社或部门</td>
+</tr>
+</tbody></table><div class="md-section-divider"></div><h2 data-anchor-id="d85e" id="三产品概述">三、产品概述</h2><div class="md-section-divider"></div><h3 data-anchor-id="7fbx" id="1-目标">1. 目标</h3><p data-anchor-id="z66d">完整阐述旅行社PC分销端的住宿单产品以及住宿+门票的分销这一部分进行需求的分销与说明</p><div class="md-section-divider"></div><h3 data-anchor-id="ufck" id="2-功能摘要">2. 功能摘要</h3><table data-anchor-id="uew4" class="table table-striped-white table-bordered">
+<thead>
+<tr>
+ <th>功能模块</th>
+ <th>主要功能点</th>
+ <th>功能描述</th>
+ <th>功能优先级</th>
+</tr>
+</thead>
+<tbody><tr>
+ <td>分销商-住宿</td>
+ <td>搜索门店</td>
+ <td>用户可以选择根据筛选条件筛选门店</td>
+ <td>高</td>
+</tr>
+<tr>
+ <td>分销商-住宿</td>
+ <td>展示景区热门客栈列表</td>
+ <td>展示热门客栈list</td>
+ <td>高</td>
+</tr>
+<tr>
+ <td>分销商-住宿</td>
+ <td>展示门店搜索结果</td>
+ <td>根据搜索结果展示门店</td>
+ <td>高</td>
+</tr>
+<tr>
+ <td>分销商-住宿</td>
+ <td>筛选门店</td>
+ <td>在搜索结果中筛选门店</td>
+ <td>高</td>
+</tr>
+<tr>
+ <td>分销商-住宿</td>
+ <td>客栈详情</td>
+ <td>客栈的详细信息展示</td>
+ <td>高</td>
+</tr>
+<tr>
+ <td>分销商-住宿</td>
+ <td>下单</td>
+ <td>对房型进行下单购买</td>
+ <td>高</td>
+</tr>
+<tr>
+ <td>分销商-住宿</td>
+ <td>支付</td>
+ <td>订单支付</td>
+ <td>高</td>
+</tr>
+<tr>
+ <td>分销商-住宿+门票</td>
+ <td>搜索组合产品</td>
+ <td>根据搜索条件搜索门店</td>
+ <td>高</td>
+</tr>
+<tr>
+ <td>分销商-住宿+门票</td>
+ <td>展示景区热门组合产品列表</td>
+ <td>展示热门组合产品list</td>
+ <td>高</td>
+</tr>
+<tr>
+ <td>分销商-住宿+门票</td>
+ <td>展示组合产品搜索结果</td>
+ <td>根据搜索条件展示组合搜索结果</td>
+ <td>高</td>
+</tr>
+<tr>
+ <td>分销商-住宿+门票</td>
+ <td>筛选组合产品</td>
+ <td>根据筛选条件对组合产品进行筛选</td>
+ <td>高</td>
+</tr>
+<tr>
+ <td>分销商-住宿+门票</td>
+ <td>组合产品详情</td>
+ <td>展示组合产品的详情</td>
+ <td>高</td>
+</tr>
+<tr>
+ <td>分销商-住宿+门票</td>
+ <td>下单</td>
+ <td>对组合产品进行下单</td>
+ <td>高</td>
+</tr>
+<tr>
+ <td>分销商-住宿+门票</td>
+ <td>支付</td>
+ <td>对订单进行支付</td>
+ <td>高</td>
+</tr>
+<tr>
+ <td>分销商-我的订单</td>
+ <td>搜索订单</td>
+ <td>根据条件在订单list中搜索订单</td>
+ <td>高</td>
+</tr>
+<tr>
+ <td>分销商-我的订单</td>
+ <td>住宿订单列表</td>
+ <td>展示住宿单产品订单主要信息列表</td>
+ <td>高</td>
+</tr>
+<tr>
+ <td>分销商-我的订单</td>
+ <td>住宿订单详情</td>
+ <td>展示住宿单产品订单的详细信息</td>
+ <td>高</td>
+</tr>
+<tr>
+ <td>分销商-我的订单</td>
+ <td>住宿订单退款</td>
+ <td>对住宿单产品订单进行退款</td>
+ <td>高</td>
+</tr>
+<tr>
+ <td>分销商-我的订单</td>
+ <td>住宿+门票订单列表</td>
+ <td>展示住宿组合产品订单主要信息列表</td>
+ <td>高</td>
+</tr>
+<tr>
+ <td>分销商-我的订单</td>
+ <td>住宿+门票订单详情</td>
+ <td>展示住宿组合产品订单的详细信息</td>
+ <td>高</td>
+</tr>
+<tr>
+ <td>分销商-我的订单</td>
+ <td>住宿+门票订单退款</td>
+ <td>对住宿组合产品订单进行退款</td>
+ <td>高</td>
+</tr>
+</tbody></table><div class="md-section-divider"></div><h2 data-anchor-id="akzb" id="四功能详解">四、功能详解</h2><div class="md-section-divider"></div><h3 data-anchor-id="nmmq" id="1-分销商-住宿">1. 分销商-住宿</h3><p data-anchor-id="5grf"><br></p><div class="md-section-divider"></div><h4 data-anchor-id="4y04" id="11-功能概述">1.1 功能概述</h4><p data-anchor-id="hbnz">该模块主要涉及住宿单产品的查看与下单逻辑。</p><p data-anchor-id="fnfb"><br></p><div class="md-section-divider"></div><h4 data-anchor-id="a4ap" id="12-功能摘要">1.2 功能摘要</h4><table data-anchor-id="xqqu" class="table table-striped-white table-bordered">
+<thead>
+<tr>
+ <th>功能模块</th>
+ <th>主要功能点</th>
+ <th>功能描述</th>
+ <th>功能优先级</th>
+</tr>
+</thead>
+<tbody><tr>
+ <td>分销商-住宿</td>
+ <td>搜索门店</td>
+ <td>用户可以选择根据筛选条件筛选门店</td>
+ <td>高</td>
+</tr>
+<tr>
+ <td>分销商-住宿</td>
+ <td>展示景区热门客栈列表</td>
+ <td>展示热门客栈list</td>
+ <td>高</td>
+</tr>
+<tr>
+ <td>分销商-住宿</td>
+ <td>展示门店搜索结果</td>
+ <td>根据搜索结果展示门店</td>
+ <td>高</td>
+</tr>
+<tr>
+ <td>分销商-住宿</td>
+ <td>筛选门店</td>
+ <td>在搜索结果中筛选门店</td>
+ <td>高</td>
+</tr>
+<tr>
+ <td>分销商-住宿</td>
+ <td>客栈详情</td>
+ <td>客栈的详细信息展示</td>
+ <td>高</td>
+</tr>
+<tr>
+ <td>分销商-住宿</td>
+ <td>下单</td>
+ <td>对房型进行下单购买</td>
+ <td>高</td>
+</tr>
+<tr>
+ <td>分销商-住宿</td>
+ <td>支付</td>
+ <td>订单支付</td>
+ <td>高</td>
+</tr>
+</tbody></table><p data-anchor-id="p9dd"><br></p><div class="md-section-divider"></div><h4 data-anchor-id="jx7o" id="13-功能说明">1.3 功能说明</h4><div class="md-section-divider"></div><h4 data-anchor-id="d2bj" id="131-搜索门店">1.3.1 搜索门店</h4><div class="md-section-divider"></div><h5 data-anchor-id="2qbf" id="1需求描述">（1）需求描述</h5><p data-anchor-id="muw7">用户需要根据自己的出行需求，如入离时间、目的地等对客栈进行搜索。</p><div class="md-section-divider"></div><h5 data-anchor-id="vszj" id="2输入条件">（2）输入条件</h5><ol data-anchor-id="au9n">
+<li>选择目的地（必选）</li>
+<li>选择入离时间（必选）</li>
+<li>填写关键字（可选）</li>
+</ol><div class="md-section-divider"></div><h5 data-anchor-id="ohvf" id="3界面原型">（3）界面原型</h5><p data-anchor-id="2cqo"><img src="http://static.zybuluo.com/leanjoker/ye1nr4oaxofkpvf53hpakkfu/%E4%BD%8F%E5%AE%BF%E5%8D%95%E4%BA%A7%E5%93%81.png" alt="住宿单产品.png-109.7kB" title=""></p><div class="md-section-divider"></div><h5 data-anchor-id="okmj" id="4对应字段">（4）对应字段</h5><ol data-anchor-id="i1g4">
+<li>目的地：列表。列表值为票之家合作的景区的省份list。</li>
+<li>入住日期：默认选中“当天”。用户可以选择今天及今天以后到“今天+90”的日期。</li>
+<li>离店日期：默认选中“当天+1”。用户可以选择“入住日期+1”及今天以后到“今天+91”的日期。</li>
+<li>关键字：用户可以输入客栈名称、客栈所属景区进行查询。采用模糊搜索。</li>
+</ol><div class="md-section-divider"></div><h5 data-anchor-id="nkqw" id="5交互动作">（5）交互动作</h5><ol data-anchor-id="jvwz">
+<li>用户点击主导航的“分销商”中的“住宿”，进入住宿单产品模块。</li>
+<li>用户点击目的地下拉框可以选择目的地。</li>
+<li>用户点击“入住时间”输入框可以在日历控件上选择“入住时间”，用户点击“离店时间”可以在日历控件上选择“离店时间”。</li>
+<li>用户可以在关键字输入框中输入关键字。</li>
+<li>用户点击“搜索”，在当前页面跳转搜索结果页。</li>
+</ol><div class="md-section-divider"></div><h5 data-anchor-id="8lc9" id="6相关规则">（6）相关规则</h5><ol data-anchor-id="44lk">
+<li>当用户选择的入住日期大于离店日期时，离店日期自动变为“入住日期”+1。</li>
+<li><font color="red">用户首次进入住宿产品页，目的地默认选择“所有省份”，记录用户最新的选择的省份，在下次用户进入住宿首页时默认为用户选择该省份。</font></li>
+</ol><div class="md-section-divider"></div><h5 data-anchor-id="aj72" id="7-判定条件及提示">（7） 判定条件及提示</h5><table data-anchor-id="mx1v" class="table table-striped-white table-bordered">
+<thead>
+<tr>
+ <th>序号</th>
+ <th>判定内容</th>
+ <th>判定时间</th>
+ <th>判定提示</th>
+</tr>
+</thead>
+<tbody><tr>
+ <td>1</td>
+ <td>用户是否选择目的地</td>
+ <td>用户点击“搜索”时</td>
+ <td>请选择目的地</td>
+</tr>
+</tbody></table><div class="md-section-divider"></div><h4 data-anchor-id="sihp" id="132-展示景区热门客栈列表">1.3.2 展示景区热门客栈列表</h4><div class="md-section-divider"></div><h5 data-anchor-id="pv3h" id="1需求描述-1">（1）需求描述</h5><p data-anchor-id="qqcy">用户可以在住宿产品首页查看各景区的热门客栈。</p><div class="md-section-divider"></div><h5 data-anchor-id="tbbc" id="2界面原型">（2）界面原型</h5><p data-anchor-id="x5b3"><img src="http://static.zybuluo.com/leanjoker/7vgi1mk0wljbdpt6542gl39i/%E4%BD%8F%E5%AE%BF%E5%8D%95%E4%BA%A7%E5%93%81.png" alt="住宿单产品.png-109.7kB" title=""></p><div class="md-section-divider"></div><h5 data-anchor-id="ih1s" id="3对应字段">（3）对应字段</h5><ol data-anchor-id="e4us">
+<li>景区名称：取值来自与魔方旅游合作的景区。</li>
+<li>客栈名称：取值来自住宿供应端。</li>
+<li>客栈头图：取值来自住宿供应端客栈图片。</li>
+<li>价格：取值来自住宿供应端该客栈在入住时间段的最低房价。</li>
+<li>客栈区域：取值来自供应端“客栈区域”与“客栈附近景点”的拼接字段。</li>
+<li>客栈特点：取值来自供应端“客栈区域”与“客栈附近景点”的拼接字段。</li>
+</ol><div class="md-section-divider"></div><h5 data-anchor-id="7p7u" id="4交互动作">（4）交互动作</h5><ol data-anchor-id="oh6e">
+<li>用户可以点击“更多”在新开页中展示该景区的所有客栈列表。</li>
+<li>用户点击客栈块级区域在新开页中展示该客栈的详情页。</li>
+</ol><div class="md-section-divider"></div><h5 data-anchor-id="0lzn" id="5相关规则">（5）相关规则</h5><ol data-anchor-id="62n8">
+<li>景区排序规则按照运营需求来进行排序。</li>
+<li>每个景区有3个推荐位，按照运营需求进行推荐。如运营无特别要求，按照该景区的客栈销量进行降序排列，若销量相同按照客栈首次提交代供销平台审核的降序排列。</li>
+</ol><div class="md-section-divider"></div><h4 data-anchor-id="2fth" id="133-展示门店搜索结果">1.3.3 展示门店搜索结果</h4><div class="md-section-divider"></div><h5 data-anchor-id="yqt2" id="1需求描述-2">（1）需求描述</h5><p data-anchor-id="8iyx">用户可以通过搜索进入门店结果页查看客栈列表，用户也可以通过景区对应的“更多”点击进行该景区的客栈列表页。</p><div class="md-section-divider"></div><h5 data-anchor-id="2bgl" id="2前置条件">（2）前置条件</h5><ol data-anchor-id="m0lp">
+<li>选择目的地（必选）</li>
+<li>选择入离时间（必选）</li>
+<li>填写关键字（可选）</li>
+</ol><div class="md-section-divider"></div><h5 data-anchor-id="1qyo" id="3界面原型-1">（3）界面原型</h5><p data-anchor-id="9x1s"><img src="http://static.zybuluo.com/leanjoker/xfy923jkrbqyjtx0jxx66eva/%E4%BD%8F%E5%AE%BF%E4%BA%A7%E5%93%81%E5%88%97%E8%A1%A8%E9%A1%B5.png" alt="住宿产品列表页.png-204.9kB" title=""></p><div class="md-section-divider"></div><h5 data-anchor-id="28v6" id="4对应字段-1">（4）对应字段</h5><ol data-anchor-id="0535">
+<li>客栈总数：符合查询条件的客栈的总数。</li>
+<li>客栈名称：取值来自供应端的客栈名称。</li>
+<li>客栈地址：取值来自住宿供应端。</li>
+<li>客栈最低价格：取值来自该客栈符合入离时间的房型最低价格。</li>
+<li>客栈区域：取值来自供应端“客栈区域”与“客栈附近景点”的拼接字段。</li>
+<li>客栈特点：取值来自供应端“客栈区域”与“客栈附近景点”的拼接字段。</li>
+<li>房型：取值来自该客栈在该入离时间售卖的所有房型。</li>
+<li>床型：取值来自该房型的床型。</li>
+<li>有无早餐：取值来自该房型的房型设施选项中的“有无早餐项”。</li>
+<li>有无宽带：取值来自该房型的房型设施选项中的“有无宽带项”。</li>
+<li>挂牌价：取值来自该房型的挂牌价。</li>
+<li>卖价：取值来自该房型的卖价减去前返金额的最终结果。</li>
+<li>剩余间数：取值来自该房型在该入离时段的剩余库存数。</li>
+</ol><div class="md-section-divider"></div><h5 data-anchor-id="8u99" id="5交互动作-1">（5）交互动作</h5><ol data-anchor-id="unro">
+<li>用户点击“客栈头图”或“客栈名称”，在新开页中展示客栈详情页。</li>
+<li>用户点击“查看地图”在弹窗中展示地图。</li>
+<li>用户点击“预订”在新开页进入该客栈的下单页。</li>
+<li>鼠标hover卖价上会出现气泡提示每天的具体价格。</li>
+</ol><div class="md-section-divider"></div><h5 data-anchor-id="1bj2" id="6相关规则-1">（6）相关规则</h5><ol data-anchor-id="i953">
+<li>若用户输入了关键字则按照关键字的匹配程度由高到低进行排序展现。首先呈现完全匹配选项，再呈现部分匹配项，部分匹配项按照销量由高到低排序。</li>
+<li>若用户只选择了目的地进行搜索，则该客栈列表页将按照客栈的历史销量由高到低进行排序呈现，若销量相同则按照客栈的首次提交房型到平台的审核时间降序进行呈现。</li>
+<li>该页面需要展示已经满房的客栈房型，显示“售罄”且预订按钮不可点击。</li>
+<li>若有超过20条客栈数据需要呈现分页按钮。</li>
+</ol><div class="md-section-divider"></div><h4 data-anchor-id="j5kt" id="134-筛选门店">1.3.4 筛选门店</h4><div class="md-section-divider"></div><h5 data-anchor-id="hhw5" id="1需求描述-3">（1）需求描述</h5><p data-anchor-id="oo1v">用户可以对门店搜索结果进行筛选以更加精准地匹配自己的需求。</p><div class="md-section-divider"></div><h5 data-anchor-id="sf8q" id="2界面原型-1">（2）界面原型</h5><p data-anchor-id="1ibx"><img src="http://static.zybuluo.com/leanjoker/osxg7lzhbqrkpujalv8uf8j4/%E4%BD%8F%E5%AE%BF%E4%BA%A7%E5%93%81%E5%88%97%E8%A1%A8%E9%A1%B5.png" alt="住宿产品列表页.png-204.9kB" title=""></p><div class="md-section-divider"></div><h5 data-anchor-id="yhyv" id="3对应字段-1">（3）对应字段</h5><ol data-anchor-id="kz77">
+<li>目的地：选中用户查询的客栈所属的目的地。</li>
+<li>入住时间：继承用户在搜索页输入的入住时间，用户可以修改。</li>
+<li>离店时间：继承用户在搜索页输入的离店时间，用户可以修改。</li>
+<li>关键字：继承用户在搜索页输入的关键字，用户可以修改。</li>
+<li>价格范围：价格区间筛选写为定值。分别为“不限”、“¥150以下”、“¥150-¥300”、“¥300-¥500”、“¥500以上”。默认勾选“不限”。</li>
+<li>门店设施：写为定值。“不限”、“免费WiFi”、“有线上网”、“停车场”、“自行车租赁”、“公共电脑”、“接送服务”、“洗衣房”、“传真/打印”、“电吹风”、“自主厨房”、“会议室”、“刷卡消费”、“酒吧”、“茶室”、“咖啡厅”、“游泳池”、“健身房”。默认勾选“不限”。</li>
+</ol><div class="md-section-divider"></div><h5 data-anchor-id="cgan" id="4交互动作-1">（4）交互动作</h5><ol data-anchor-id="e9fa">
+<li>用户可以选择“目的地”、修改“入住”、“离店”时间、键入关键字进行搜索。</li>
+<li>用户可以对价格区间、门店设施进行筛选搜索。</li>
+</ol><div class="md-section-divider"></div><h4 data-anchor-id="8838" id="135-客栈详情">1.3.5 客栈详情</h4><div class="md-section-divider"></div><h5 data-anchor-id="xq13" id="1需求描述-4">（1）需求描述</h5><p data-anchor-id="83c0">用户可以进入客栈详情页进行客栈详情的查看。</p><div class="md-section-divider"></div><h5 data-anchor-id="2r0x" id="2界面原型-2">（2）界面原型</h5><p data-anchor-id="kqpy"><img src="http://static.zybuluo.com/leanjoker/t8ct4nztg9e3soa9ohopceww/%E4%BD%8F%E5%AE%BF%E5%8D%95%E4%BA%A7%E5%93%81_1.png" alt="住宿单产品_1.png-214.4kB" title=""></p><div class="md-section-divider"></div><h5 data-anchor-id="bog4" id="3对应字段-2">（3）对应字段</h5><ol data-anchor-id="ilni">
+<li>客栈名称：取值来自供应端。</li>
+<li>前台电话：取值来自供应端。</li>
+<li>客栈地址：取值来自供应端。</li>
+<li>客栈图片：取值来自供应端。</li>
+<li>住宿单产品 <br>
+<ul><li>入住时间：继承用户在上一级页面选择的入住时间。</li>
+<li>离店时间：继承用户在上一级页面选择的入住时间。</li>
+<li>共几晚：根据入离时间算出的晚数。</li>
+<li>房型：取值来自该客栈的所有房型。</li>
+<li>床信息：取值来自供应端。</li>
+<li>卖价：客栈向平台提交的卖价（建议零售价）减去前返金额的实际结算价。</li>
+<li>挂牌价：取值来自供应端。</li>
+<li>房型图片：取值来自供应端。</li>
+<li>楼层：取值来自供应端。</li>
+<li>房间面积：取值来自供应端。</li>
+<li>最多可住人数：取值来自供应端。</li>
+<li>床型：取值来自供应端。</li>
+<li>是否有窗户：取值来自供应端。</li>
+<li>房型设施：取值来自供应端。</li>
+<li>房型简介：取值来自供应端。</li>
+<li>违约金规则：取值来自供应端。</li>
+<li>剩余库存：根据入离日期计算该房型的剩余库存数。若以售卖完，显示“售罄”。</li></ul></li>
+<li>住宿+门票： <br>
+<ul><li>入住时间：继承上级页面选择的入住时间。</li>
+<li>产品名称：房型+门票名称（包含规格）</li>
+<li>卖价：取值来自该客栈的卖价与魔方旅游的前返金额之差，为实际结算价。</li>
+<li>挂牌价：取值来自该客栈的挂牌价。</li>
+<li>返还款：若票有后返则显示后返金额。</li>
+<li>房型信息： <br>
+<ul><li>房型图片</li>
+<li>楼层</li>
+<li>房间面积</li>
+<li>最多可住人数</li>
+<li>床型</li>
+<li>是否有窗户</li>
+<li>房型设施</li>
+<li>房型简介</li>
+<li>违约金规则</li></ul></li>
+<li>门票信息： <br>
+<ul><li>票型：取值来自景区端。</li>
+<li>使用说明：取值来自景区端。</li>
+<li>购买说明：取值来自景区端。</li>
+<li>返利说明：取值来自景区端。</li>
+<li>重要条款：取值来自景区端。</li></ul></li>
+<li>客栈信息 <br>
+<ul><li>客栈故事：取值来自住宿供应端。</li>
+<li>客栈地址：取值来自住宿供应端。</li>
+<li>客栈设施：取值来自住宿供应端。</li>
+<li>老板照片：取值来自住宿供应端。</li>
+<li>老板故事：取值来自住宿供应端。</li></ul></li></ul></li>
+</ol><div class="md-section-divider"></div><h5 data-anchor-id="3fkc" id="4交互动作-2">（4）交互动作</h5><ol data-anchor-id="gxrm">
+<li>点击“查看地图”在弹窗中可以查看地图。</li>
+<li>详情页默认激活“住宿”tab，用户可以点击“住宿+门票”进行内容的切换。</li>
+<li>用户可以修改入离日期，点击“更改日期”进行切换。</li>
+<li>鼠标hover卖价上会出现气泡提示每天的具体价格。</li>
+<li>用户点击房型图片，在弹窗中可以查看房型的大图。</li>
+<li>点击产品名称，若未展开产品详情则展开产品详情。若已展开则收起。默认收起。</li>
+<li>点击“预订”在当前页面跳转下单页。</li>
+</ol><div class="md-section-divider"></div><h5 data-anchor-id="vlss" id="5相关规则-1">（5）相关规则</h5><ol data-anchor-id="sz2t">
+<li>客栈的房型排序规则按照房型的价格从低到高排序，价格相同按照销量由高到低排序。</li>
+<li>票的显示字段继承当前景区的业务逻辑。</li>
+</ol><div class="md-section-divider"></div><h4 data-anchor-id="nxxn" id="136-下单">1.3.6 下单</h4><div class="md-section-divider"></div><h5 data-anchor-id="h6zr" id="1需求描述-5">（1）需求描述</h5><p data-anchor-id="pdkc">用户可以对客栈的房型进行下单操作。</p><div class="md-section-divider"></div><h5 data-anchor-id="i4v9" id="2操作流程">（2）操作流程</h5><div class="md-section-divider"></div><div class="flow-diagram theme theme-white" data-anchor-id="v5cc"><svg height="998.5" version="1.1" width="391" xmlns="http://www.w3.org/2000/svg" style="overflow: hidden; position: relative;"><desc style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Created with Raphaël 2.1.2</desc><defs style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><path stroke-linecap="round" d="M5,0 0,2.5 5,5z" id="raphael-marker-block" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><marker id="raphael-marker-endblock33" markerHeight="3" markerWidth="3" orient="auto" refX="1.5" refY="1.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#raphael-marker-block" transform="rotate(180 1.5 1.5) scale(0.6,0.6)" stroke-width="1.6667" fill="black" stroke="none" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></use></marker></defs><rect x="0" y="0" width="50" height="37" r="20" rx="20" ry="20" fill="#ffffff" stroke="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" stroke-width="2" class="flowchart" id="st" transform="matrix(1,0,0,1,159,75.5)"></rect><text x="10" y="18.5" text-anchor="start" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: start; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 15px; line-height: normal; font-family: Arial;" id="stt" class="flowchartt" font-size="15px" transform="matrix(1,0,0,1,159,75.5)"><tspan dy="5.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">开始</tspan></text><rect x="0" y="0" width="110" height="37" r="0" rx="0" ry="0" fill="#ffffff" stroke="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" stroke-width="2" class="flowchart" id="op1" transform="matrix(1,0,0,1,129,238)"></rect><text x="10" y="18.5" text-anchor="start" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: start; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 15px; line-height: normal; font-family: Arial;" id="op1t" class="flowchartt" font-size="15px" transform="matrix(1,0,0,1,129,238)"><tspan dy="5.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">选择入离时间</tspan></text><rect x="0" y="0" width="80" height="37" r="0" rx="0" ry="0" fill="#ffffff" stroke="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" stroke-width="2" class="flowchart" id="op2" transform="matrix(1,0,0,1,144,400.5)"></rect><text x="10" y="18.5" text-anchor="start" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: start; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 15px; line-height: normal; font-family: Arial;" id="op2t" class="flowchartt" font-size="15px" transform="matrix(1,0,0,1,144,400.5)"><tspan dy="5.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">选择房型</tspan></text><rect x="0" y="0" width="260" height="37" r="0" rx="0" ry="0" fill="#ffffff" stroke="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" stroke-width="2" class="flowchart" id="op3" transform="matrix(1,0,0,1,54,563)"></rect><text x="10" y="18.5" text-anchor="start" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: start; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 15px; line-height: normal; font-family: Arial;" id="op3t" class="flowchartt" font-size="15px" transform="matrix(1,0,0,1,54,563)"><tspan dy="5.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">选择需要购买的房型及其数量并下单</tspan></text><path fill="#ffffff" stroke="#000000" d="M90,45L0,90L180,180L360,90L180,0L0,90" stroke-width="2" id="cond" class="flowchart" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" transform="matrix(1,0,0,1,4,654)"></path><text x="95" y="90" text-anchor="start" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: start; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 15px; line-height: normal; font-family: Arial;" id="condt" class="flowchartt" font-size="15px" transform="matrix(1,0,0,1,4,654)"><tspan dy="5.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">下单时再次确认是否有充足库存</tspan></text><rect x="0" y="0" width="80" height="37" r="20" rx="20" ry="20" fill="#ffffff" stroke="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" stroke-width="2" class="flowchart" id="e" transform="matrix(1,0,0,1,144,959.5)"></rect><text x="10" y="18.5" text-anchor="start" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: start; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 15px; line-height: normal; font-family: Arial;" id="et" class="flowchartt" font-size="15px" transform="matrix(1,0,0,1,144,959.5)"><tspan dy="5.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">下单成功</tspan><tspan dy="18" x="10" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></tspan></text><path fill="none" stroke="#000000" d="M184,112.5C184,112.5,184,215.9052528142929,184,234.99079264036845" stroke-width="2" marker-end="url(#raphael-marker-endblock33)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><path fill="none" stroke="#000000" d="M184,275C184,275,184,378.4052528142929,184,397.49079264036845" stroke-width="2" marker-end="url(#raphael-marker-endblock33)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><path fill="none" stroke="#000000" d="M184,437.5C184,437.5,184,540.9052528142929,184,559.9907926403685" stroke-width="2" marker-end="url(#raphael-marker-endblock33)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><path fill="none" stroke="#000000" d="M184,600C184,600,184,639.6540999412537,184,651.0004390846007" stroke-width="2" marker-end="url(#raphael-marker-endblock33)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><path fill="none" stroke="#000000" d="M184,834C184,834,184,937.4052528142929,184,956.4907926403685" stroke-width="2" marker-end="url(#raphael-marker-endblock33)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><text x="189" y="844" text-anchor="start" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: start; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 15px; line-height: normal; font-family: Arial;" font-size="15px"><tspan dy="5.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">yes</tspan></text><path fill="none" stroke="#000000" d="M364,744C364,744,389,744,389,744C389,744,389,538,389,538C389,538,184,538,184,538C184,538,184,553.3734445571899,184,560.0092477742583" stroke-width="2" marker-end="url(#raphael-marker-endblock33)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><text x="369" y="734" text-anchor="start" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: start; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 15px; line-height: normal; font-family: Arial;" font-size="15px"><tspan dy="5.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">no</tspan></text></svg></div><div class="md-section-divider"></div><h5 data-anchor-id="u0qr" id="3界面原型-2">（3）界面原型</h5><p data-anchor-id="9gl6"><img src="http://static.zybuluo.com/leanjoker/edpybk1lsoiu9bnt3u8c6ns8/%E4%B8%8B%E5%8D%95.png" alt="下单.png-69.7kB" title=""></p><div class="md-section-divider"></div><h5 data-anchor-id="c7in" id="4对应字段-2">（4）对应字段</h5><ol data-anchor-id="8ydm">
+<li>入住日期：默认继承用户在上一级页面选择的入住日期，不可修改。</li>
+<li>离店日期：默认继承用户在上一级页面选择的离店日期，不可修改。</li>
+<li>共几晚：通过入住时间与离店时间计算相差天数。</li>
+<li>地接社部门：非必选项，list取值来自“我的部门”。</li>
+<li>导游绑定：必选项，list取值来自“我的导游”。</li>
+<li>联系人：如果用户选择了导游，默认继承导游的名字。如果没有绑定导游则需要用户输入。</li>
+<li>手机号：如果用户选择了导游，默认继承导游的手机号。如果没有绑定导游则需要用户输入。</li>
+<li>房型名称：用户选择的客栈下所有有库存的房型。</li>
+<li>间数：除开用户在客栈详情页点击的房型勾选上，其余房型不勾选上，间数默认为“1”，用户可以修改，可以点击“-”与“+”进行增减，每个房型不能超过当时入离时间查出的库存数。</li>
+<li>剩余库存：下单时的剩余库存数。</li>
+<li>每日卖价：入离时间所对应的每日的价格（为<strong>结算价</strong>）。</li>
+<li>平均卖价：每日卖价在入离时间的每日卖价。</li>
+<li>单个房型总价：用户勾选的房型每日卖价*间数的总价。</li>
+<li>违约金规则：该房型的违约金规则。</li>
+<li>到店时间：用户可以在list中选择。list值为定值“18:00之前”、“20:00之前”、“23:59之前”、“次日凌晨06:00之前”。默认选择“18:00之前”。</li>
+<li>支付方选择：自己支付、部门代付、导游代付。单选项，必选。</li>
+<li>订单金额：取值来自用户选择的房型的总价。</li>
+</ol><div class="md-section-divider"></div><h5 data-anchor-id="0his" id="5交互动作-2">（5）交互动作</h5><ol data-anchor-id="srv7">
+<li>用户可以点击勾选自己需要购买的房型。当用户输入的数量超过该房型的库存时，自动变为该房型的最大库存数，当用户输入负数时，自动变为1。当用户点击“-”与“+”按钮时，当数值变为0时，“-”按钮置灰，当数值变为该房型的在该入离时间的最大库存数时“+”按钮不可点击。</li>
+<li>当用户未选择任何组合产品时0时，“下单”按钮不可点击。</li>
+<li><font color="red">下单时锁房间库存，默认为未支付用户锁30min库存，30min后未支付自动释放库存，在支付时需要再次验证库存是否锁成功。</font></li>
+</ol><div class="md-section-divider"></div><h5 data-anchor-id="pebu" id="6相关规则-2">（6）相关规则</h5><ol data-anchor-id="zyrr">
+<li>用户在客栈详情页点击预订，默认在下单页勾选此房型，且此房型数量默认为“1”，该客栈的其余房型在此房型下列出，其他房型的排序规则为按照房型价格升序排列。</li>
+<li>下单处生成订单，未支付订单在30min以内未支付则自动取消。</li>
+</ol><div class="md-section-divider"></div><h5 data-anchor-id="jel1" id="7判定条件及提示">（7）判定条件及提示</h5><table data-anchor-id="ssne" class="table table-striped-white table-bordered">
+<thead>
+<tr>
+ <th>序号</th>
+ <th>判定内容</th>
+ <th>判定时间</th>
+ <th>判定提示</th>
+</tr>
+</thead>
+<tbody><tr>
+ <td>1</td>
+ <td>用户下单时是否有充足的房型</td>
+ <td>用户点击“下单” 时</td>
+ <td>[房型名]库存只剩1间，请修改您的预订数量。</td>
+</tr>
+</tbody></table><div class="md-section-divider"></div><h4 data-anchor-id="tqlu" id="137-支付">1.3.7 支付</h4><div class="md-section-divider"></div><h5 data-anchor-id="85mg" id="1需求描述-6">（1）需求描述</h5><p data-anchor-id="lr6v">用户可以对订单进行支付操作。</p><div class="md-section-divider"></div><h5 data-anchor-id="uij7" id="2界面原型-3">（2）界面原型</h5><p data-anchor-id="gimm"><img src="http://static.zybuluo.com/leanjoker/p0cwawdpmh5q4nen2sdveku9/%E6%94%AF%E4%BB%98.png" alt="支付.png-53.7kB" title=""></p><div class="md-section-divider"></div><h5 data-anchor-id="ao15" id="3对应字段-3">（3）对应字段</h5><ol data-anchor-id="mfis">
+<li>订单金额：取值来自该订单的订单总金额。</li>
+<li>返还款抵现：若用户有返还款则先用返还款抵现。</li>
+<li>实付金额：订单金额与返还款抵现之差为实付金额。</li>
+</ol><div class="md-section-divider"></div><h5 data-anchor-id="fh5k" id="4交互动作-3">（4）交互动作</h5><ol data-anchor-id="aeld">
+<li>点击“去支付”，跳转支付页面。</li>
+<li>支付成功后跳转支付成功页面。</li>
+</ol><div class="md-section-divider"></div><h5 data-anchor-id="mka6" id="5相关规则-2">（5）相关规则</h5><ol data-anchor-id="w8jc">
+<li>支付具体流程继承系统现有逻辑。</li>
+<li><font color="red">下单时锁房间库存，默认为未支付用户锁30min库存，30min后未支付自动释放库存，在支付时需要再次验证库存是否锁成功。</font></li>
+</ol><div class="md-section-divider"></div><h3 data-anchor-id="ggwb" id="2-分销商-住宿">2. 分销商-住宿</h3><p data-anchor-id="s909"><br></p><div class="md-section-divider"></div><h4 data-anchor-id="8xdf" id="21-功能概述">2.1 功能概述</h4><p data-anchor-id="hs6o">该模块主要涉及住宿单产品的查看与下单逻辑。</p><p data-anchor-id="s2eo"><br></p><div class="md-section-divider"></div><h4 data-anchor-id="ulzu" id="22-功能摘要">2.2 功能摘要</h4><table data-anchor-id="ey1t" class="table table-striped-white table-bordered">
+<thead>
+<tr>
+ <th>功能模块</th>
+ <th>主要功能点</th>
+ <th>功能描述</th>
+ <th>功能优先级</th>
+</tr>
+</thead>
+<tbody><tr>
+ <td>分销商-住宿+门票</td>
+ <td>搜索组合产品</td>
+ <td>根据搜索条件搜索门店</td>
+ <td>高</td>
+</tr>
+<tr>
+ <td>分销商-住宿+门票</td>
+ <td>展示景区热门组合产品列表</td>
+ <td>展示热门组合产品list</td>
+ <td>高</td>
+</tr>
+<tr>
+ <td>分销商-住宿+门票</td>
+ <td>展示组合产品搜索结果</td>
+ <td>根据搜索条件展示组合搜索结果</td>
+ <td>高</td>
+</tr>
+<tr>
+ <td>分销商-住宿+门票</td>
+ <td>筛选组合产品</td>
+ <td>根据筛选条件对组合产品进行筛选</td>
+ <td>高</td>
+</tr>
+<tr>
+ <td>分销商-住宿+门票</td>
+ <td>组合产品详情</td>
+ <td>展示组合产品的详情</td>
+ <td>高</td>
+</tr>
+<tr>
+ <td>分销商-住宿+门票</td>
+ <td>下单</td>
+ <td>对组合产品进行下单</td>
+ <td>高</td>
+</tr>
+<tr>
+ <td>分销商-住宿+门票</td>
+ <td>支付</td>
+ <td>对订单进行支付</td>
+ <td>高</td>
+</tr>
+</tbody></table><p data-anchor-id="g9ty"><br></p><div class="md-section-divider"></div><h4 data-anchor-id="r16k" id="23-功能说明">2.3 功能说明</h4><div class="md-section-divider"></div><h4 data-anchor-id="0vps" id="231-搜索组合产品">2.3.1 搜索组合产品</h4><div class="md-section-divider"></div><h5 data-anchor-id="31i3" id="1需求描述-7">（1）需求描述</h5><p data-anchor-id="njwl">用户需要根据自己的出行需求，如入离时间、目的地等对客栈进行搜索。</p><div class="md-section-divider"></div><h5 data-anchor-id="fbyb" id="2输入条件-1">（2）输入条件</h5><ol data-anchor-id="s0x4">
+<li>选择目的地（必选）</li>
+<li>选择入住时间（必选）</li>
+<li>填写关键字（可选）</li>
+</ol><div class="md-section-divider"></div><h5 data-anchor-id="v3x3" id="3界面原型-3">（3）界面原型</h5><p data-anchor-id="f0ep"><img src="http://static.zybuluo.com/leanjoker/n60ljijm4184u7lqviupe21t/%E4%BD%8F%E5%AE%BF%E7%BB%84%E5%90%88%E4%BA%A7%E5%93%81.png" alt="住宿组合产品.png-69kB" title=""></p><div class="md-section-divider"></div><h5 data-anchor-id="yplc" id="4对应字段-3">（4）对应字段</h5><ol data-anchor-id="q6ys">
+<li>目的地：列表。列表值为票之家合作的景区的省份list。</li>
+<li>入住日期：默认选中“当天”。用户可以选择今天及今天以后到“今天+90”的日期。</li>
+<li>关键字：用户可以输入客栈名称、客栈所属景区进行查询。采用模糊搜索。</li>
+</ol><div class="md-section-divider"></div><h5 data-anchor-id="em71" id="5交互动作-3">（5）交互动作</h5><ol data-anchor-id="2kg1">
+<li>用户点击主导航的“分销商”中的“住宿+门票”，进入住宿组合产品模块。</li>
+<li>用户点击目的地下拉框可以选择目的地。</li>
+<li>用户点击“入住时间”输入框可以在日历控件上选择“入住时间”，用户点击“离店时间”可以在日历控件上选择“离店时间”。</li>
+<li>用户可以在关键字输入框中输入关键字。</li>
+<li>用户点击“搜索”，在当前页面跳转搜索结果页。</li>
+</ol><div class="md-section-divider"></div><h5 data-anchor-id="f3xg" id="6-判定条件及提示">（6） 判定条件及提示</h5><table data-anchor-id="ekyx" class="table table-striped-white table-bordered">
+<thead>
+<tr>
+ <th>序号</th>
+ <th>判定内容</th>
+ <th>判定时间</th>
+ <th>判定提示</th>
+</tr>
+</thead>
+<tbody><tr>
+ <td>1</td>
+ <td>用户是否选择目的地</td>
+ <td>用户点击“搜索”时</td>
+ <td>请选择目的地</td>
+</tr>
+</tbody></table><div class="md-section-divider"></div><h4 data-anchor-id="r61x" id="232-展示景区热门组合产品列表">2.3.2 展示景区热门组合产品列表</h4><div class="md-section-divider"></div><h5 data-anchor-id="3khd" id="1需求描述-8">（1）需求描述</h5><p data-anchor-id="bmuj">用户可以在住宿+门票产品首页查看各景区的热门组合产品。</p><div class="md-section-divider"></div><h5 data-anchor-id="otxr" id="2界面原型-4">（2）界面原型</h5><p data-anchor-id="l3vt"><img src="http://static.zybuluo.com/leanjoker/iddu8roxdgd7cq0s1q0c5dw8/%E4%BD%8F%E5%AE%BF%E7%BB%84%E5%90%88%E4%BA%A7%E5%93%81.png" alt="住宿组合产品.png-69kB" title=""></p><div class="md-section-divider"></div><h5 data-anchor-id="na04" id="3对应字段-4">（3）对应字段</h5><ol data-anchor-id="lx4r">
+<li>景区名称：取值来自与魔方旅游合作的景区。</li>
+<li>组合名称：客栈名称与门票的拼接字段。</li>
+<li>客栈头图：取值来自住宿供应端客栈图片。</li>
+<li>价格：取值来自该组合产品的最低价格。</li>
+<li>客栈区域：取值来自供应端“客栈区域”与“客栈附近景点”的拼接字段。</li>
+<li>客栈特点：取值来自供应端“客栈区域”与“客栈附近景点”的拼接字段。</li>
+</ol><div class="md-section-divider"></div><h5 data-anchor-id="656e" id="4交互动作-4">（4）交互动作</h5><ol data-anchor-id="yllu">
+<li>用户可以点击“更多”在新开页中展示该景区的所有组合产品。</li>
+<li>用户点击组合产品块级区域在新开页中展示该组合产品的详情页。</li>
+</ol><div class="md-section-divider"></div><h5 data-anchor-id="w2mu" id="5相关规则-3">（5）相关规则</h5><ol data-anchor-id="hvk7">
+<li>景区排序规则按照运营需求来进行排序。</li>
+<li>每个景区有3个推荐位，按照运营需求进行推荐。如运营无特别要求，按照该景区的组合产品的销量进行降序排列。</li>
+</ol><div class="md-section-divider"></div><h4 data-anchor-id="fjcb" id="233-展示组合产品搜索结果">2.3.3 展示组合产品搜索结果</h4><div class="md-section-divider"></div><h5 data-anchor-id="ivst" id="1需求描述-9">（1）需求描述</h5><p data-anchor-id="cbot">用户可以在住宿+门票产品首页查看各景区的热门客栈。</p><div class="md-section-divider"></div><h5 data-anchor-id="0zze" id="2前置条件-1">（2）前置条件</h5><ol data-anchor-id="qxtc">
+<li>选择目的地（必选）</li>
+<li>选择入住时间（必选）</li>
+<li>填写关键字（可选）</li>
+</ol><div class="md-section-divider"></div><h5 data-anchor-id="8j3w" id="3界面原型-4">（3）界面原型</h5><p data-anchor-id="xxgs"><img src="http://static.zybuluo.com/leanjoker/snaz3yw099j0mcq3pojy8mx6/%E4%BD%8F%E5%AE%BF+%E9%97%A8%E7%A5%A8.png" alt="住宿+门票.png-76.2kB" title=""></p><div class="md-section-divider"></div><h5 data-anchor-id="2492" id="4对应字段-4">（4）对应字段</h5><ol data-anchor-id="32ol">
+<li>组合产品总数：符合查询条件的组合产品总数。</li>
+<li>组合名称：客栈名称与门票的拼接字段。</li>
+<li>客栈地址：取值来自住宿供应端。</li>
+<li>组合产品最低价格：取值来自该客栈符合入离时间的房型最低价格。</li>
+<li>组合产品名称：取值来自该客栈与所有组合产品的最终组合。</li>
+<li>床型：取值来自该房型的床型。</li>
+<li>挂牌价：取值来自该房型与门票的门市价之和。</li>
+<li>卖价：取值来自该房型与门票的建议零售价减去前返金额的最终结果。</li>
+<li>剩余库存：取值来自该组合产品的剩余库存。</li>
+</ol><div class="md-section-divider"></div><h5 data-anchor-id="h3zp" id="5交互动作-4">（5）交互动作</h5><ol data-anchor-id="qhe7">
+<li>用户点击“客栈头图”或“组合名称”，在新开页中展示组合产品详情页。</li>
+<li>用户点击“查看地图”在弹窗中展示地图。</li>
+<li>用户点击“预订”在新开页进入该组合产品的下单页。</li>
+<li>鼠标hover卖价上会出现气泡提示每天的具体价格。</li>
+</ol><div class="md-section-divider"></div><h5 data-anchor-id="wz2c" id="6相关规则-3">（6）相关规则</h5><ol data-anchor-id="dvfs">
+<li>若用户输入了关键字则按照关键字的匹配程度由高到低进行排序展现。首先呈现完全匹配选项，再呈现部分匹配项，部分匹配项按照销量由多到少排序。</li>
+<li>若用户只选择了目的地进行搜索，则该客栈列表页将按照组合产品的历史销量由高到低进行排序呈现，若销量相同则按照客栈首次提交平台审核的时间的降序进行排序。</li>
+<li>该页面需要展示已经售罄的组合产品，显示“售罄”且预订按钮不可点击。</li>
+<li>若有超过20条组合产品数据需要呈现分页按钮。</li>
+</ol><div class="md-section-divider"></div><h4 data-anchor-id="0m4q" id="234-筛选组合产品">2.3.4 筛选组合产品</h4><div class="md-section-divider"></div><h5 data-anchor-id="4ue6" id="1需求描述-10">（1）需求描述</h5><p data-anchor-id="kue0">用户可以对门店搜索结果进行筛选以更加精准地匹配自己的需求。</p><div class="md-section-divider"></div><h5 data-anchor-id="2i9a" id="2界面原型-5">（2）界面原型</h5><p data-anchor-id="iuy8"><img src="http://static.zybuluo.com/leanjoker/nykfxjpjr0ceb5dvhwcx021z/%E4%BD%8F%E5%AE%BF+%E9%97%A8%E7%A5%A8.png" alt="住宿+门票.png-76.2kB" title=""></p><div class="md-section-divider"></div><h5 data-anchor-id="937f" id="3对应字段-5">（3）对应字段</h5><ol data-anchor-id="b1ke">
+<li>目的地：选中用户查询的客栈所属的目的地。</li>
+<li>入住时间：继承用户在搜索页输入的入住时间，用户可以修改。</li>
+<li>关键字：继承用户在搜索页输入的关键字，用户可以修改。</li>
+</ol><div class="md-section-divider"></div><h5 data-anchor-id="unky" id="4交互动作-5">（4）交互动作</h5><ol data-anchor-id="g289">
+<li>用户可以选择“目的地”、修改“入住”时间、键入关键字进行搜索。</li>
+</ol><div class="md-section-divider"></div><h4 data-anchor-id="cs34" id="235-组合产品详情">2.3.5 组合产品详情</h4><div class="md-section-divider"></div><h5 data-anchor-id="8dlx" id="1需求描述-11">（1）需求描述</h5><p data-anchor-id="xwvo">用户可以进入组合产品详情页进行组合产品详情的查看。</p><div class="md-section-divider"></div><h5 data-anchor-id="i1jp" id="2界面原型-6">（2）界面原型</h5><p data-anchor-id="dc6t"><img src="http://static.zybuluo.com/leanjoker/yzlmzwayxfj17g2miwga3tej/%E4%BD%8F%E5%AE%BF%E7%BB%84%E5%90%88.png" alt="住宿组合.png-189.3kB" title=""></p><div class="md-section-divider"></div><h5 data-anchor-id="go42" id="3对应字段-6">（3）对应字段</h5><ol data-anchor-id="9oke">
+<li>组合名称：取值来自客栈+门票的拼接字段。</li>
+<li>前台电话：取值来自住宿供应端。</li>
+<li>客栈地址：取值来自住宿供应端。</li>
+<li>客栈图片：取值来自住宿供应端。</li>
+<li>住宿+门票： <br>
+<ul><li>入住时间：继承上一级页面选择的入住时间，用户可修改。</li>
+<li>产品名称：房型+门票名称（包含规格）</li>
+<li>卖价：取值来自该客栈的卖价与魔方旅游的前返金额之差，为实际结算价。</li>
+<li>挂牌价：取值来自该客栈的挂牌价。</li>
+<li>返还款：取值来自景区，为门票的后返金额。</li>
+<li>房型信息： <br>
+<ul><li>房型图片</li>
+<li>楼层</li>
+<li>房间面积</li>
+<li>最多可住人数</li>
+<li>床型</li>
+<li>是否有窗户</li>
+<li>房型设施</li>
+<li>房型简介</li>
+<li>违约金规则</li></ul></li>
+<li>门票信息：取值来自景区端。 <br>
+<ul><li>票型</li>
+<li>使用说明</li>
+<li>购买说明</li>
+<li>返利说明</li>
+<li>重要条款</li></ul></li>
+<li>客栈信息 <br>
+<ul><li>客栈故事：取值来自住宿供应端。</li>
+<li>客栈地址：取值来自住宿供应端。</li>
+<li>客栈设施：取值来自住宿供应端。</li>
+<li>老板照片：取值来自住宿供应端。</li>
+<li>老板故事：取值来自住宿供应端。</li></ul></li></ul></li>
+</ol><div class="md-section-divider"></div><h5 data-anchor-id="fuge" id="4交互动作-6">（4）交互动作</h5><ol data-anchor-id="hiww">
+<li>点击“查看地图”在弹窗中可以查看地图。</li>
+<li>用户可以修改入住日期，点击“更改日期”进行切换。</li>
+<li>鼠标hover卖价上会出现气泡提示每天的具体价格。</li>
+<li>用户点击房型图片，在弹窗中可以查看房型的大图。</li>
+<li>点击产品名称，若未展开产品详情则展开产品详情。若已展开则收起。默认收起。</li>
+<li>点击“预订”在当前页面跳转下单页。</li>
+</ol><div class="md-section-divider"></div><h5 data-anchor-id="opwc" id="5相关规则-4">（5）相关规则</h5><ol data-anchor-id="gy7c">
+<li>组合产品的排序规则按照价格从低到高排序，价格相同按照销量由高到低排序。</li>
+</ol><div class="md-section-divider"></div><h4 data-anchor-id="d24g" id="236-下单">2.3.6 下单</h4><div class="md-section-divider"></div><h5 data-anchor-id="upyi" id="1需求描述-12">（1）需求描述</h5><p data-anchor-id="md4q">用户可以对组合产品进行下单操作。</p><div class="md-section-divider"></div><h5 data-anchor-id="joil" id="2操作流程-1">（2）操作流程</h5><div class="md-section-divider"></div><div class="flow-diagram theme theme-white" data-anchor-id="spdh"><svg height="998.5" version="1.1" width="391" xmlns="http://www.w3.org/2000/svg" style="overflow: hidden; position: relative;"><desc style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Created with Raphaël 2.1.2</desc><defs style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><path stroke-linecap="round" d="M5,0 0,2.5 5,5z" id="raphael-marker-block" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><marker id="raphael-marker-endblock33" markerHeight="3" markerWidth="3" orient="auto" refX="1.5" refY="1.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#raphael-marker-block" transform="rotate(180 1.5 1.5) scale(0.6,0.6)" stroke-width="1.6667" fill="black" stroke="none" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></use></marker></defs><rect x="0" y="0" width="50" height="37" r="20" rx="20" ry="20" fill="#ffffff" stroke="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" stroke-width="2" class="flowchart" id="st" transform="matrix(1,0,0,1,159,75.5)"></rect><text x="10" y="18.5" text-anchor="start" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: start; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 15px; line-height: normal; font-family: Arial;" id="stt" class="flowchartt" font-size="15px" transform="matrix(1,0,0,1,159,75.5)"><tspan dy="5.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">开始</tspan></text><rect x="0" y="0" width="110" height="37" r="0" rx="0" ry="0" fill="#ffffff" stroke="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" stroke-width="2" class="flowchart" id="op1" transform="matrix(1,0,0,1,129,238)"></rect><text x="10" y="18.5" text-anchor="start" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: start; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 15px; line-height: normal; font-family: Arial;" id="op1t" class="flowchartt" font-size="15px" transform="matrix(1,0,0,1,129,238)"><tspan dy="5.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">选择入住时间</tspan></text><rect x="0" y="0" width="110" height="37" r="0" rx="0" ry="0" fill="#ffffff" stroke="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" stroke-width="2" class="flowchart" id="op2" transform="matrix(1,0,0,1,129,400.5)"></rect><text x="10" y="18.5" text-anchor="start" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: start; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 15px; line-height: normal; font-family: Arial;" id="op2t" class="flowchartt" font-size="15px" transform="matrix(1,0,0,1,129,400.5)"><tspan dy="5.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">选择组合产品</tspan></text><rect x="0" y="0" width="290" height="37" r="0" rx="0" ry="0" fill="#ffffff" stroke="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" stroke-width="2" class="flowchart" id="op3" transform="matrix(1,0,0,1,39,563)"></rect><text x="10" y="18.5" text-anchor="start" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: start; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 15px; line-height: normal; font-family: Arial;" id="op3t" class="flowchartt" font-size="15px" transform="matrix(1,0,0,1,39,563)"><tspan dy="5.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">选择需要购买的组合产品及其数量并下单</tspan></text><path fill="#ffffff" stroke="#000000" d="M90,45L0,90L180,180L360,90L180,0L0,90" stroke-width="2" id="cond" class="flowchart" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" transform="matrix(1,0,0,1,4,654)"></path><text x="95" y="90" text-anchor="start" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: start; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 15px; line-height: normal; font-family: Arial;" id="condt" class="flowchartt" font-size="15px" transform="matrix(1,0,0,1,4,654)"><tspan dy="5.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">下单时再次确认是否有充足库存</tspan></text><rect x="0" y="0" width="80" height="37" r="20" rx="20" ry="20" fill="#ffffff" stroke="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" stroke-width="2" class="flowchart" id="e" transform="matrix(1,0,0,1,144,959.5)"></rect><text x="10" y="18.5" text-anchor="start" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: start; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 15px; line-height: normal; font-family: Arial;" id="et" class="flowchartt" font-size="15px" transform="matrix(1,0,0,1,144,959.5)"><tspan dy="5.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">下单成功</tspan><tspan dy="18" x="10" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></tspan></text><path fill="none" stroke="#000000" d="M184,112.5C184,112.5,184,215.9052528142929,184,234.99079264036845" stroke-width="2" marker-end="url(#raphael-marker-endblock33)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><path fill="none" stroke="#000000" d="M184,275C184,275,184,378.4052528142929,184,397.49079264036845" stroke-width="2" marker-end="url(#raphael-marker-endblock33)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><path fill="none" stroke="#000000" d="M184,437.5C184,437.5,184,540.9052528142929,184,559.9907926403685" stroke-width="2" marker-end="url(#raphael-marker-endblock33)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><path fill="none" stroke="#000000" d="M184,600C184,600,184,639.6540999412537,184,651.0004390846007" stroke-width="2" marker-end="url(#raphael-marker-endblock33)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><path fill="none" stroke="#000000" d="M184,834C184,834,184,937.4052528142929,184,956.4907926403685" stroke-width="2" marker-end="url(#raphael-marker-endblock33)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><text x="189" y="844" text-anchor="start" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: start; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 15px; line-height: normal; font-family: Arial;" font-size="15px"><tspan dy="5.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">yes</tspan></text><path fill="none" stroke="#000000" d="M364,744C364,744,389,744,389,744C389,744,389,538,389,538C389,538,184,538,184,538C184,538,184,553.3734445571899,184,560.0092477742583" stroke-width="2" marker-end="url(#raphael-marker-endblock33)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><text x="369" y="734" text-anchor="start" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: start; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 15px; line-height: normal; font-family: Arial;" font-size="15px"><tspan dy="5.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">no</tspan></text></svg></div><div class="md-section-divider"></div><h5 data-anchor-id="d9hm" id="3界面原型-5">（3）界面原型</h5><p data-anchor-id="fxzn"><img src="http://static.zybuluo.com/leanjoker/bp5p5bka79nrpcuwirj9jp3o/%E4%B8%8B%E5%8D%95%EF%BC%88%E4%BD%8F%E5%AE%BF_%E6%99%AF%E5%8C%BA%E9%97%A8%E7%A5%A8%EF%BC%89.png" alt="下单（住宿_景区门票）.png-80.3kB" title=""> <br>
+<img src="http://static.zybuluo.com/leanjoker/w1emayl2i0gmoe0jwhptr3o5/%E4%B8%8B%E5%8D%95%EF%BC%88%E4%BD%8F%E5%AE%BF_%E6%BC%94%E8%89%BA%E9%97%A8%E7%A5%A8%EF%BC%89.png" alt="下单（住宿_演艺门票）.png-86.5kB" title=""></p><div class="md-section-divider"></div><h5 data-anchor-id="7jnm" id="4对应字段-5">（4）对应字段</h5><ol data-anchor-id="81ef">
+<li>地接社部门：非必选项，list取值来自“我的部门”。</li>
+<li>导游绑定：必选项，list取值来自“我的导游”。</li>
+<li>联系人：如果用户选择了导游，默认继承导游的名字。如果没有绑定导游则需要用户输入。</li>
+<li>手机号：如果用户选择了导游，默认继承导游的手机号。如果没有绑定导游则需要用户输入。</li>
+<li>组合产品名称：用户选择的该组合下的所有组合产品名称。</li>
+<li>份数：除开用户在组合产品详情页点击的房套餐勾选上其余产品不勾选上，间数默认为“1”，用户可以修改，可以点击“-”与“+”进行增减，每个组合产品的份数不能超过当时入离时间查出的库存数。</li>
+<li>剩余库存：下单时的剩余库存数。</li>
+<li>住宿产品： <br>
+<ul><li>入离日期：根据上级页面选择的入住日期再根据组合产品的规格计算出离店日期及住几晚。</li>
+<li>每日卖价：入离时间所对应的每日的价格（为<strong>结算价</strong>）。</li>
+<li>平均卖价：每日卖价在入离时间的每日卖价。</li>
+<li>单个房型总价：用户勾选的房型每日卖价*间数的总价。</li>
+<li>违约金规则：该套餐涉及的房型的违约金规则。</li>
+<li>到店时间：用户可以在list中选择。list值为定值“18:00之前”、“20:00之前”、“23:59之前”、“次日凌晨06:00之前”。默认选择“18:00之前”。</li></ul></li>
+<li>景区门票：继承景区门票的字段规则。 <br>
+<ul><li>门票名称</li>
+<li>门票数量</li>
+<li>游玩日期</li>
+<li>游客姓名</li>
+<li>游客电话号码</li>
+<li>游客身份证号</li></ul></li>
+<li>演艺门票：继承演艺门票的字段规则。 <br>
+<ul><li>门票名称</li>
+<li>门票数量</li>
+<li>演出日期</li>
+<li>演出场次</li>
+<li>座位</li>
+<li>游客姓名</li>
+<li>游客电话号码</li>
+<li>游客身份证号码</li>
+<li>座位号</li></ul></li>
+<li>支付方选择：自己支付、部门代付、导游代付。单选项，必选。</li>
+<li>订单金额：取值来自用户选择的组合产品的总价。</li>
+</ol><div class="md-section-divider"></div><h5 data-anchor-id="lkmw" id="5交互动作-5">（5）交互动作</h5><ol data-anchor-id="yjxr">
+<li>用户可以点击勾选自己需要购买的组合产品。当用户输入的数量超过该组合产品的库存时，自动变为该组合产品的最大库存数，当用户输入负数时，自动变为1。当用户点击“-”与“+”按钮时，当数值变为0时，“-”按钮置灰，当数值变为该组合产品在该入离时间的最大库存数时“+”按钮不可点击。</li>
+<li>当用户未选择任何组合产品时0时，“下单”按钮不可点击。</li>
+</ol><div class="md-section-divider"></div><h5 data-anchor-id="vfoz" id="6相关规则-4">（6）相关规则</h5><ol data-anchor-id="wvtv">
+<li>用户在详情页针对某一组合产品点击预订，默认在下单页勾选此组合产品，且此组合产品数量默认为“1”，该组合的其余组合产品在此页面下方列出，排序规则为按照组合产品价格升序排列。</li>
+<li>下单处生成订单，未支付订单在30min以内未支付则自动取消。</li>
+<li>景区门票与演艺门票部门的下单逻辑继承已有的景区门票与演艺门票的下单逻辑。</li>
+<li>门票下单流程继承景区的身份证检票与二维码票的下单逻辑。</li>
+<li><font color="red">下单时锁房间库存，默认为未支付用户锁30min库存，30min后未支付自动释放库存，在支付时需要再次验证库存是否锁成功。</font></li>
+</ol><div class="md-section-divider"></div><h4 data-anchor-id="4qdh" id="237-支付">2.3.7 支付</h4><div class="md-section-divider"></div><h5 data-anchor-id="2gq2" id="1需求描述-13">（1）需求描述</h5><p data-anchor-id="9v9e">用户可以对订单进行支付操作。</p><div class="md-section-divider"></div><h5 data-anchor-id="m5xm" id="2界面原型-7">（2）界面原型</h5><p data-anchor-id="2m3t"><img src="http://static.zybuluo.com/leanjoker/p28fcvx7ebpa5wh0og53g6q5/%E6%94%AF%E4%BB%98.png" alt="支付.png-54.1kB" title=""></p><div class="md-section-divider"></div><h5 data-anchor-id="b06a" id="3对应字段-7">（3）对应字段</h5><ol data-anchor-id="rdc7">
+<li>订单金额：取值来自该订单的订单总金额。</li>
+<li>返还款抵现：若用户有返还款则先用返还款抵现。</li>
+<li>实付金额：订单金额与返还款抵现之差为实付金额。</li>
+</ol><div class="md-section-divider"></div><h5 data-anchor-id="lamf" id="4交互动作-7">（4）交互动作</h5><ol data-anchor-id="7gk7">
+<li>点击“去支付”，跳转支付页面。</li>
+</ol><div class="md-section-divider"></div><h5 data-anchor-id="fqn4" id="5相关规则-5">（5）相关规则</h5><ol data-anchor-id="iebb">
+<li>支付具体流程继承已有逻辑。</li>
+<li><font color="red">下单时锁房间库存，默认为未支付用户锁30min库存，30min后未支付自动释放库存，在支付时需要再次验证库存是否锁成功。</font></li>
+</ol><div class="md-section-divider"></div><h3 data-anchor-id="h4vu" id="3-分销商-我的订单">3. 分销商-我的订单</h3><p data-anchor-id="5b0b"><br></p><div class="md-section-divider"></div><h4 data-anchor-id="yms6" id="31-功能概述">3.1 功能概述</h4><p data-anchor-id="ybgf">该模块主要涉及住宿单产品及组合产品的订单查看与操作。</p><p data-anchor-id="7vq1"><br></p><div class="md-section-divider"></div><h4 data-anchor-id="gaj7" id="32-功能摘要">3.2 功能摘要</h4><table data-anchor-id="awks" class="table table-striped-white table-bordered">
+<thead>
+<tr>
+ <th>功能模块</th>
+ <th>主要功能点</th>
+ <th>功能描述</th>
+ <th>功能优先级</th>
+</tr>
+</thead>
+<tbody><tr>
+ <td>分销商-我的订单</td>
+ <td>搜索订单</td>
+ <td>根据条件在订单list中搜索订单</td>
+ <td>高</td>
+</tr>
+<tr>
+ <td>分销商-我的订单</td>
+ <td>住宿订单列表</td>
+ <td>展示住宿单产品订单主要信息列表</td>
+ <td>高</td>
+</tr>
+<tr>
+ <td>分销商-我的订单</td>
+ <td>住宿订单详情</td>
+ <td>展示住宿单产品订单的详细信息</td>
+ <td>高</td>
+</tr>
+<tr>
+ <td>分销商-我的订单</td>
+ <td>住宿订单退款</td>
+ <td>对住宿单产品订单进行退款</td>
+ <td>高</td>
+</tr>
+<tr>
+ <td>分销商-我的订单</td>
+ <td>住宿+门票订单列表</td>
+ <td>展示住宿组合产品订单主要信息列表</td>
+ <td>高</td>
+</tr>
+<tr>
+ <td>分销商-我的订单</td>
+ <td>住宿+门票订单详情</td>
+ <td>展示住宿组合产品订单的详细信息</td>
+ <td>高</td>
+</tr>
+<tr>
+ <td>分销商-我的订单</td>
+ <td>住宿+门票订单退款</td>
+ <td>对住宿组合产品订单进行退款</td>
+ <td>高</td>
+</tr>
+</tbody></table><p data-anchor-id="gee5"><br></p><div class="md-section-divider"></div><h4 data-anchor-id="vynm" id="33-流程及状态说明">3.3 流程及状态说明</h4><ul data-anchor-id="ek1m">
+<li><p>住宿单产品</p>
+
+<ul><li><p>分销端主订单状态图 <br>
+<a href="http://static.zybuluo.com/leanjoker/ik66b9h9oit2799nepjfbunb/%E5%88%86%E9%94%80%E7%AB%AF%E4%B8%BB%E8%AE%A2%E5%8D%95%E7%8A%B6%E6%80%81.vsdx" class="attachment-block" target="_blank"><i class="icon-file-alt icon-4x"></i><span class="attachment-filename">分销端主订单状态.vsdx</span><span class="attachment-filesize">36.5kB</span></a> <br>
+<img src="http://static.zybuluo.com/leanjoker/qytj9htji59q1zu9tyr4d91p/%E5%88%86%E9%94%80%E7%AB%AF%E4%B8%BB%E8%AE%A2%E5%8D%95%E7%8A%B6%E6%80%81.jpg" alt="分销端主订单状态.jpg-26.2kB" title=""></p></li>
+<li><p>分销端子订单状态图 <br>
+<a href="http://static.zybuluo.com/leanjoker/jazpsld50zo6i8pgf2jw6od1/%E5%88%86%E9%94%80%E7%AB%AF%E5%AD%90%E8%AE%A2%E5%8D%95%E7%8A%B6%E6%80%81%E5%9B%BE%20%281%29.vsdx" class="attachment-block" target="_blank"><i class="icon-file-alt icon-4x"></i><span class="attachment-filename">分销端子订单状态图 (1).vsdx</span><span class="attachment-filesize">35.7kB</span></a> <br>
+<img src="http://static.zybuluo.com/leanjoker/t6tb0k5j8aqc6p1xvgedoa0p/%E5%88%86%E9%94%80%E7%AB%AF%E5%AD%90%E8%AE%A2%E5%8D%95%E7%8A%B6%E6%80%81%E5%9B%BE%20%281%29.jpg" alt="分销端子订单状态图 (1).jpg-19.3kB" title=""></p></li></ul></li>
+<li><p>分销端住宿单产品订单状态：</p>
+
+<ul><li>主订单 <br>
+<ul><li>未支付（待支付）</li>
+<li>已取消</li>
+<li>待消费</li>
+<li>部分退款（若部分子订单中有退款订单则主订单状态变为部分退款）</li>
+<li>全部退款（若全部子订单都申请退款则主订单状态变为全部退款）</li>
+<li>已消费（check in）</li>
+<li>已核销（退房后7日）</li></ul></li>
+<li>子订单 <br>
+<ul><li>未支付（待支付）</li>
+<li>已取消</li>
+<li>待消费</li>
+<li>已退款</li>
+<li>已消费（check in）</li>
+<li>已核销（退房后7日）</li></ul></li></ul></li>
+</ul><p data-anchor-id="vhg6"><font color="grey">注：住宿产品主订单与子订单划分：用户在分销端下的一个订单为主订单，以一个主订单中单个房型为维度进行子订单的划分。</font></p><ul data-anchor-id="f9s8">
+<li><p>住宿组合产品</p>
+
+<ul><li><p>分销端主订单状态图 <br>
+<a href="http://static.zybuluo.com/leanjoker/d8b16oggzkec2u4k8ejhsx8x/%E5%88%86%E9%94%80%E7%AB%AF%E4%B8%BB%E8%AE%A2%E5%8D%95%E7%8A%B6%E6%80%81%20-%20%E7%BB%84%E5%90%88%20%281%29.vsdx" class="attachment-block" target="_blank"><i class="icon-file-alt icon-4x"></i><span class="attachment-filename">分销端主订单状态 - 组合 (1).vsdx</span><span class="attachment-filesize">36.1kB</span></a></p></li>
+<li><p>分销端子订单状态图 <br>
+<a href="http://static.zybuluo.com/leanjoker/pwsfg05fh2flk61lin9ssqk1/%E5%88%86%E9%94%80%E7%AB%AF%E5%AD%90%E8%AE%A2%E5%8D%95%E7%8A%B6%E6%80%81%E5%9B%BE.vsdx" class="attachment-block" target="_blank"><i class="icon-file-alt icon-4x"></i><span class="attachment-filename">分销端子订单状态图.vsdx</span><span class="attachment-filesize">35.3kB</span></a> <br>
+<img src="http://static.zybuluo.com/leanjoker/ar111d308mza3wnzrs1lovzx/%E5%88%86%E9%94%80%E7%AB%AF%E5%AD%90%E8%AE%A2%E5%8D%95%E7%8A%B6%E6%80%81%E5%9B%BE.jpg" alt="分销端子订单状态图.jpg-19.3kB" title=""></p></li>
+<li><p>分销端住宿组合产品订单状态：</p>
+
+<ul><li>主订单</li>
+<li>未支付（待支付）</li>
+<li>已取消</li>
+<li>待消费</li>
+<li>部分退款（若部分子订单中有退款订单则主订单状态变为部分退款）</li>
+<li>全部退款（若全部子订单都申请退款则主订单状态变为全部退款）</li>
+<li>部分消费</li>
+<li>已消费（check in）</li>
+<li>已核销（退房后7日）</li>
+<li>子订单</li>
+<li>未支付（待支付）</li>
+<li>已取消</li>
+<li>待消费</li>
+<li>已退款</li>
+<li>已消费（check in）</li>
+<li>已核销（退房后7日）</li></ul></li></ul></li>
+</ul><p data-anchor-id="uy08"><font color="grey">注：住宿+门票产品主订单与子订单划分：用户在分销端下的一个订单为主订单，以一个主订单中单个品类中的一个SKU为维度进行子订单的划分，例如住宿品类则以住宿订单中的单个房型为维度切分最小子订单。</font></p><p data-anchor-id="8ge6"><br></p><div class="md-section-divider"></div><h4 data-anchor-id="oepb" id="34-功能说明">3.4 功能说明</h4><div class="md-section-divider"></div><h4 data-anchor-id="neyo" id="341-搜索订单">3.4.1 搜索订单</h4><div class="md-section-divider"></div><h5 data-anchor-id="f0ix" id="1需求描述-14">（1）需求描述</h5><p data-anchor-id="i1fa">搜索部门继承旅行社PC现有的逻辑。</p><div class="md-section-divider"></div><h4 data-anchor-id="w85u" id="342-住宿订单列表">3.4.2 住宿订单列表</h4><div class="md-section-divider"></div><h5 data-anchor-id="a0on" id="1需求描述-15">（1）需求描述</h5><p data-anchor-id="parh">用户可以在订单列表页查看订单的主要信息。</p><div class="md-section-divider"></div><h5 data-anchor-id="wt2n" id="2界面原型-8">（2）界面原型</h5><p data-anchor-id="fx5j"><img src="http://static.zybuluo.com/leanjoker/4c5cykgaa1ir3xsk0d2ehxit/%E4%BD%8F%E5%AE%BF.png" alt="住宿.png-95.5kB" title=""></p><div class="md-section-divider"></div><h5 data-anchor-id="5f5i" id="3对应字段-8">（3）对应字段</h5><ol data-anchor-id="s55m">
+<li>订单编号</li>
+<li>下单时间</li>
+<li>来源：下单的旅行社名称。</li>
+<li>实际入住时间：取值来自住宿供应端在本地系统办理入住的实际时间。</li>
+<li>订单序号：从“1”开始自增。</li>
+<li>客栈名称：</li>
+<li>房型</li>
+<li>数量</li>
+<li>导游</li>
+<li>导游手机号</li>
+<li>联系人</li>
+<li>联系人手机号</li>
+<li>订单状态：待付款、待消费、已成交、部分退款、全部退款、已取消</li>
+</ol><div class="md-section-divider"></div><h5 data-anchor-id="qzng" id="5交互动作-6">（5）交互动作</h5><ol data-anchor-id="hprq">
+<li>对于所有订单用户可以点击“订单详情”，在新开页中可以查看该订单的详情。对于未付款订单，用户可以点击“取消订单”、“支付”。</li>
+<li>取消订单需要二次确认。</li>
+</ol><div class="md-section-divider"></div><h5 data-anchor-id="gds6" id="6相关规则-5">（6）相关规则</h5><ol data-anchor-id="4dh5">
+<li>订单列表排序按照下单时间降序排列。</li>
+<li>订单变为“已消费”状态有两种触发机制：触发了任意一个条件则该订单变为“已消费”状态 <br>
+<ul><li>PMS本地对该订单办理入住</li>
+<li>时间到达用户在下单时选择的入住当日到店时间</li></ul></li>
+<li>当订单变为“已消费”状态则关闭退款入口。</li>
+</ol><div class="md-section-divider"></div><h4 data-anchor-id="qi4u" id="343-住宿订单详情">3.4.3 住宿订单详情</h4><div class="md-section-divider"></div><h5 data-anchor-id="uz9d" id="1需求描述-16">（1）需求描述</h5><p data-anchor-id="58t3">用户可以查看某一订单的订单详情。</p><div class="md-section-divider"></div><h5 data-anchor-id="iwf5" id="2界面原型-9">（2）界面原型</h5><p data-anchor-id="l4mf"><img src="http://static.zybuluo.com/leanjoker/jsqh77nerzppxxus0nuiue76/%E8%AE%A2%E5%8D%95%E8%AF%A6%E6%83%85.png" alt="订单详情.png-74.9kB" title=""></p><div class="md-section-divider"></div><h5 data-anchor-id="8vxi" id="3对应字段-9">（3）对应字段</h5><ol data-anchor-id="7zol">
+<li>订单编号</li>
+<li>下单时间</li>
+<li>下单人</li>
+<li>支付时间</li>
+<li>支付方</li>
+<li>支付方式</li>
+<li>实际入住时间：</li>
+<li>已退金额</li>
+<li>违约金</li>
+<li>订单序号：从“1”开始自增。</li>
+<li>客栈名称</li>
+<li>房型</li>
+<li>房型状态：待消费、已成交、退款中、已退款</li>
+<li>数量</li>
+<li>导游</li>
+<li>导游手机号</li>
+<li>联系人</li>
+<li>联系人手机号</li>
+<li>订单状态：待付款、待消费、已成交、部分退款、全部退款、已取消</li>
+<li>入离时间</li>
+<li>共几晚</li>
+<li>联系人</li>
+<li>手机号</li>
+<li>单个房型总价</li>
+<li>订单金额</li>
+<li>实付金额</li>
+<li>返利款抵现金额</li>
+<li>部门</li>
+<li>导游</li>
+<li>团号</li>
+<li>退款规则：房与票的违约金规则汇总。</li>
+</ol><div class="md-section-divider"></div><h5 data-anchor-id="tcyw" id="5交互动作-7">（5）交互动作</h5><ol data-anchor-id="vwpr">
+<li>对于未付款订单，用户可以点击“取消订单”、“支付”。</li>
+<li>取消订单时需要二次确认。</li>
+<li>对于“待消费”订单，用户可以针对房型进行退款。</li>
+</ol><div class="md-section-divider"></div><h4 data-anchor-id="wgji" id="344-住宿订单退款">3.4.4 住宿订单退款</h4><div class="md-section-divider"></div><h5 data-anchor-id="syp0" id="1需求描述-17">（1）需求描述</h5><p data-anchor-id="kdb8">用户可以针对订单中的单个房型进行退款的操作。</p><div class="md-section-divider"></div><h5 data-anchor-id="hre4" id="2操作流程-2">（2）操作流程</h5><div class="md-section-divider"></div><div class="flow-diagram theme theme-white" data-anchor-id="uanq"><svg height="316" version="1.1" width="161" xmlns="http://www.w3.org/2000/svg" style="overflow: hidden; position: relative;"><desc style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Created with Raphaël 2.1.2</desc><defs style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><path stroke-linecap="round" d="M5,0 0,2.5 5,5z" id="raphael-marker-block" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><marker id="raphael-marker-endblock33" markerHeight="3" markerWidth="3" orient="auto" refX="1.5" refY="1.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#raphael-marker-block" transform="rotate(180 1.5 1.5) scale(0.6,0.6)" stroke-width="1.6667" fill="black" stroke="none" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></use></marker></defs><rect x="0" y="0" width="50" height="37" r="20" rx="20" ry="20" fill="#ffffff" stroke="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" stroke-width="2" class="flowchart" id="st" transform="matrix(1,0,0,1,56.5,4)"></rect><text x="10" y="18.5" text-anchor="start" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: start; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 15px; line-height: normal; font-family: Arial;" id="stt" class="flowchartt" font-size="15px" transform="matrix(1,0,0,1,56.5,4)"><tspan dy="5.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">开始</tspan></text><rect x="0" y="0" width="155" height="37" r="0" rx="0" ry="0" fill="#ffffff" stroke="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" stroke-width="2" class="flowchart" id="op1" transform="matrix(1,0,0,1,4,95)"></rect><text x="10" y="18.5" text-anchor="start" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: start; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 15px; line-height: normal; font-family: Arial;" id="op1t" class="flowchartt" font-size="15px" transform="matrix(1,0,0,1,4,95)"><tspan dy="5.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">选择希望退款的房型</tspan></text><rect x="0" y="0" width="80" height="37" r="0" rx="0" ry="0" fill="#ffffff" stroke="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" stroke-width="2" class="flowchart" id="op2" transform="matrix(1,0,0,1,41.5,186)"></rect><text x="10" y="18.5" text-anchor="start" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: start; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 15px; line-height: normal; font-family: Arial;" id="op2t" class="flowchartt" font-size="15px" transform="matrix(1,0,0,1,41.5,186)"><tspan dy="5.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">选择数量</tspan></text><rect x="0" y="0" width="50" height="37" r="20" rx="20" ry="20" fill="#ffffff" stroke="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" stroke-width="2" class="flowchart" id="e" transform="matrix(1,0,0,1,56.5,277)"></rect><text x="10" y="18.5" text-anchor="start" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: start; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 15px; line-height: normal; font-family: Arial;" id="et" class="flowchartt" font-size="15px" transform="matrix(1,0,0,1,56.5,277)"><tspan dy="5.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">退款</tspan><tspan dy="18" x="10" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></tspan></text><path fill="none" stroke="#000000" d="M81.5,41C81.5,41,81.5,80.65409994125366,81.5,92.00043908460066" stroke-width="2" marker-end="url(#raphael-marker-endblock33)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><path fill="none" stroke="#000000" d="M81.5,132C81.5,132,81.5,171.65409994125366,81.5,183.00043908460066" stroke-width="2" marker-end="url(#raphael-marker-endblock33)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><path fill="none" stroke="#000000" d="M81.5,223C81.5,223,81.5,262.65409994125366,81.5,274.00043908460066" stroke-width="2" marker-end="url(#raphael-marker-endblock33)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path></svg></div><div class="md-section-divider"></div><h5 data-anchor-id="zf2n" id="3界面原型-6">（3）界面原型</h5><p data-anchor-id="b2po"><img src="http://static.zybuluo.com/leanjoker/zevfb57zfmmmrgwkvumc2jmv/%E9%80%80%E6%AC%BE.png" alt="退款.png-55.8kB" title=""></p><div class="md-section-divider"></div><h5 data-anchor-id="ytgz" id="4对应字段-6">（4）对应字段</h5><ol data-anchor-id="zutl">
+<li>房型名称</li>
+<li>最多可退数量</li>
+<li>需要退的数量</li>
+<li>违约金规则</li>
+<li>退款金额</li>
+<li>实退金额</li>
+<li>违约金</li>
+</ol><div class="md-section-divider"></div><h5 data-anchor-id="zvkd" id="5交互动作-8">（5）交互动作</h5><ol data-anchor-id="x4ne">
+<li>用户可以点击“-”与“+”进行需要退的房型的数量的选择，用户也可以直接输入数量。当用户输入负数时默认变为“1”，当用户输入的数字超过最多可退数量是变为“最多可退数”。当需退数量为1时，“-”不可点击，当需退数量为最多可退数时，“+”不可点击。</li>
+</ol><div class="md-section-divider"></div><h5 data-anchor-id="bsv5" id="6相关规则-6">（6）相关规则</h5><ol data-anchor-id="mcgz">
+<li>对部分房型进行退款后，该退款房型状态变为“退款中”，退款成功后变为“已退款”。</li>
+<li>退款目前按照先退第三方支付的现金，第三方支付的现金退完的情况下再退返还款。</li>
+</ol><div class="md-section-divider"></div><h4 data-anchor-id="pcd1" id="345-住宿门票订单列表">3.4.5 住宿+门票订单列表</h4><div class="md-section-divider"></div><h5 data-anchor-id="n5vn" id="1需求描述-18">（1）需求描述</h5><p data-anchor-id="qi4d">用户可以在订单列表页查看订单的主要信息。</p><div class="md-section-divider"></div><h5 data-anchor-id="fwtf" id="2界面原型-10">（2）界面原型</h5><p data-anchor-id="i6ix"><img src="http://static.zybuluo.com/leanjoker/ya5gwrpzlwerjk9c5szcdo8l/%E4%BD%8F%E5%AE%BF_%E9%97%A8%E7%A5%A8.png" alt="住宿_门票.png-65kB" title=""></p><div class="md-section-divider"></div><h5 data-anchor-id="8lso" id="3对应字段-10">（3）对应字段</h5><ol data-anchor-id="dxd1">
+<li>订单序号：从“1”开始自增。</li>
+<li>订单编号</li>
+<li>下单时间</li>
+<li>来源</li>
+<li>实际入住时间：取值来自供应端的办理入住的时间。</li>
+<li>检票时间</li>
+<li>组合产品名称</li>
+<li>组合产品数量</li>
+<li>导游姓名</li>
+<li>导游手机号</li>
+<li>联系人姓名</li>
+<li>联系人手机号</li>
+<li>支付人</li>
+<li>订单状态</li>
+</ol><div class="md-section-divider"></div><h5 data-anchor-id="qj2y" id="5交互动作-9-1">（5）交互动作</h5><ol data-anchor-id="i4ui">
+<li>对于所有订单用户可以点击“订单详情”，在新开页中可以查看该订单的详情。对于未付款订单，用户可以点击“取消订单”、“支付”。</li>
+<li>取消订单时需要二次确认。</li>
+</ol><div class="md-section-divider"></div><h5 data-anchor-id="cgo8" id="6相关规则-6-1">（6）相关规则</h5><ol data-anchor-id="xamk">
+<li>订单列表排序按照下单时间降序排列。</li>
+</ol><div class="md-section-divider"></div><h4 data-anchor-id="b3pq" id="346-住宿门票订单详情">3.4.6 住宿+门票订单详情</h4><div class="md-section-divider"></div><h5 data-anchor-id="air3" id="1需求描述-19">（1）需求描述</h5><p data-anchor-id="bv97">用户可以在住宿+门票订单详情页查看订单的完整信息。</p><div class="md-section-divider"></div><h5 data-anchor-id="jkeb" id="2界面原型-11">（2）界面原型</h5><p data-anchor-id="ier4"><img src="http://static.zybuluo.com/leanjoker/zagkshfa0wf6gpownmsvw4dg/%E8%AE%A2%E5%8D%95%E8%AF%A6%E6%83%85_1.png" alt="订单详情_1.png-133.2kB" title=""></p><div class="md-section-divider"></div><h5 data-anchor-id="nap4" id="3对应字段-11">（3）对应字段</h5><ol data-anchor-id="2lfc">
+<li>订单编号</li>
+<li>景区</li>
+<li>客栈名称</li>
+<li>下单时间</li>
+<li>下单人</li>
+<li>支付时间</li>
+<li>支付方</li>
+<li>支付方式</li>
+<li>部门</li>
+<li>导游</li>
+<li>团号</li>
+<li>退款规则</li>
+<li>返还款</li>
+<li>入住时间</li>
+<li>检票时间</li>
+<li>已退金额</li>
+<li>违约金</li>
+<li>联系人</li>
+<li>手机号</li>
+<li>组合产品名称</li>
+<li>组合产品数量</li>
+<li>组合产品金额</li>
+<li>组合产品状态（子订单）：待消费、已成交、退款中、已退款</li>
+<li>住宿： <br>
+<ul><li>客栈名称</li>
+<li>房型名称</li>
+<li>房型数量</li>
+<li>入离时间</li>
+<li>共几晚</li>
+<li>到店时间</li></ul></li>
+<li>景区门票：继承景区门票的字段规则。 <br>
+<ul><li>门票名称</li>
+<li>门票数量</li>
+<li>游玩日期</li>
+<li>游客姓名</li>
+<li>游客电话号码</li>
+<li>游客身份证号</li></ul></li>
+<li>演艺门票：继承演艺门票的字段规则。 <br>
+<ul><li>门票名称</li>
+<li>门票数量</li>
+<li>演出日期</li>
+<li>演出场次</li>
+<li>座位</li>
+<li>游客姓名</li>
+<li>游客电话号码</li>
+<li>游客身份证号码</li>
+<li>座位号</li></ul></li>
+<li>订单金额</li>
+<li>返利款</li>
+<li>实付金额</li>
+</ol><div class="md-section-divider"></div><h5 data-anchor-id="8vtm" id="5交互动作-10">（5）交互动作</h5><ol data-anchor-id="f00v">
+<li>对于未付款订单，用户可以点击“取消订单”、“支付”。</li>
+<li>取消订单时需要二次确认。</li>
+<li>对于“待消费”订单，用户可以针对房型进行退款。</li>
+</ol><div class="md-section-divider"></div><h4 data-anchor-id="nr8y" id="347-住宿门票订单退款">3.4.7 住宿+门票订单退款</h4><div class="md-section-divider"></div><h5 data-anchor-id="l3de" id="1需求描述-20">（1）需求描述</h5><p data-anchor-id="4iqu">用户可以针对订单中的单个房型进行退款的操作。</p><div class="md-section-divider"></div><h5 data-anchor-id="wipm" id="2操作流程-3">（2）操作流程</h5><div class="md-section-divider"></div><div class="flow-diagram theme theme-white" data-anchor-id="s6ui"><svg height="407" version="1.1" width="161" xmlns="http://www.w3.org/2000/svg" style="overflow: hidden; position: relative;"><desc style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Created with Raphaël 2.1.2</desc><defs style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><path stroke-linecap="round" d="M5,0 0,2.5 5,5z" id="raphael-marker-block" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><marker id="raphael-marker-endblock33" markerHeight="3" markerWidth="3" orient="auto" refX="1.5" refY="1.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#raphael-marker-block" transform="rotate(180 1.5 1.5) scale(0.6,0.6)" stroke-width="1.6667" fill="black" stroke="none" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></use></marker></defs><rect x="0" y="0" width="50" height="37" r="20" rx="20" ry="20" fill="#ffffff" stroke="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" stroke-width="2" class="flowchart" id="st" transform="matrix(1,0,0,1,56.5,4)"></rect><text x="10" y="18.5" text-anchor="start" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: start; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 15px; line-height: normal; font-family: Arial;" id="stt" class="flowchartt" font-size="15px" transform="matrix(1,0,0,1,56.5,4)"><tspan dy="5.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">开始</tspan></text><rect x="0" y="0" width="155" height="37" r="0" rx="0" ry="0" fill="#ffffff" stroke="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" stroke-width="2" class="flowchart" id="op1" transform="matrix(1,0,0,1,4,95)"></rect><text x="10" y="18.5" text-anchor="start" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: start; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 15px; line-height: normal; font-family: Arial;" id="op1t" class="flowchartt" font-size="15px" transform="matrix(1,0,0,1,4,95)"><tspan dy="5.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">选择希望退款的套餐</tspan></text><rect x="0" y="0" width="80" height="37" r="0" rx="0" ry="0" fill="#ffffff" stroke="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" stroke-width="2" class="flowchart" id="op2" transform="matrix(1,0,0,1,41.5,186)"></rect><text x="10" y="18.5" text-anchor="start" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: start; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 15px; line-height: normal; font-family: Arial;" id="op2t" class="flowchartt" font-size="15px" transform="matrix(1,0,0,1,41.5,186)"><tspan dy="5.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">选择数量</tspan></text><rect x="0" y="0" width="80" height="37" r="0" rx="0" ry="0" fill="#ffffff" stroke="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" stroke-width="2" class="flowchart" id="op3" transform="matrix(1,0,0,1,41.5,277)"></rect><text x="10" y="18.5" text-anchor="start" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: start; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 15px; line-height: normal; font-family: Arial;" id="op3t" class="flowchartt" font-size="15px" transform="matrix(1,0,0,1,41.5,277)"><tspan dy="5.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">选择游客</tspan></text><rect x="0" y="0" width="50" height="37" r="20" rx="20" ry="20" fill="#ffffff" stroke="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" stroke-width="2" class="flowchart" id="e" transform="matrix(1,0,0,1,56.5,368)"></rect><text x="10" y="18.5" text-anchor="start" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: start; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 15px; line-height: normal; font-family: Arial;" id="et" class="flowchartt" font-size="15px" transform="matrix(1,0,0,1,56.5,368)"><tspan dy="5.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">退款</tspan><tspan dy="18" x="10" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></tspan></text><path fill="none" stroke="#000000" d="M81.5,41C81.5,41,81.5,80.65409994125366,81.5,92.00043908460066" stroke-width="2" marker-end="url(#raphael-marker-endblock33)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><path fill="none" stroke="#000000" d="M81.5,132C81.5,132,81.5,171.65409994125366,81.5,183.00043908460066" stroke-width="2" marker-end="url(#raphael-marker-endblock33)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><path fill="none" stroke="#000000" d="M81.5,223C81.5,223,81.5,262.65409994125366,81.5,274.00043908460066" stroke-width="2" marker-end="url(#raphael-marker-endblock33)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><path fill="none" stroke="#000000" d="M81.5,314C81.5,314,81.5,353.65409994125366,81.5,365.00043908460066" stroke-width="2" marker-end="url(#raphael-marker-endblock33)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path></svg></div><div class="md-section-divider"></div><h5 data-anchor-id="iyz1" id="3界面原型-7">（3）界面原型</h5><p data-anchor-id="k6qh"><img src="http://static.zybuluo.com/leanjoker/41z5oorehpfqojw23hoetia2/%E9%80%80%E6%AC%BE_1.png" alt="退款_1.png-70.4kB" title=""></p><div class="md-section-divider"></div><h5 data-anchor-id="8rpk" id="4对应字段-7">（4）对应字段</h5><ol data-anchor-id="uhlm">
+<li>房型名称</li>
+<li>最多可退数量</li>
+<li>需要退的数量</li>
+<li>违约金规则</li>
+<li>退款金额</li>
+<li>实退金额</li>
+<li>违约金</li>
+<li>游客信息</li>
+</ol><div class="md-section-divider"></div><h5 data-anchor-id="l4zo" id="5交互动作-11">（5）交互动作</h5><ol data-anchor-id="xzwn">
+<li>用户可以点击“-”与“+”进行需要退的房型的数量的选择，用户也可以直接输入数量。当用户输入负数时默认变为“1”，当用户输入的数字超过最多可退数量是变为“最多可退数”。当需退数量为1时，“-”不可点击，当需退数量为最多可退数时，“+”不可点击。</li>
+</ol><div class="md-section-divider"></div><h5 data-anchor-id="z541" id="6相关规则-7">（6）相关规则</h5><ol data-anchor-id="2kse">
+<li>门票退票继承现有门票退款逻辑。</li>
+</ol><hr></div>
+</body>
+</html>

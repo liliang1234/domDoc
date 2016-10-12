@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="exporter-version" content="Evernote Mac 6.1.1 (452254)"/><meta name="author" content="83342900@qq.com"/><meta name="created" content="2015-11-14 10:59:51 +0000"/><meta name="source" content="desktop.mac"/><meta name="updated" content="2015-11-19 02:20:05 +0000"/><title>票之家代供销平台1.0版prd</title></head><body>
+<div>文档名：票之家代供销平台1.0版prd</div>
+<div>相关文档：票之家代供销平台1112.rp</div>
+<div>版本号：1.0版</div>
+<div>创建时间：2015年11月10日</div>
+<div>撰写人：王伟</div>
+<div><br/></div>
+<hr/>
+<div>【修改记录】</div>
+<ul>
+<li><span style="color: rgb(4, 51, 255);">11.19修改内容（文档中标注为蓝色）</span></li>
+</ul>
+<ol>
+<li><span style="color: rgb(4, 51, 255);">所有「加点返产品」文案改为「加点返规则」</span></li>
+<li><span style="color: rgb(4, 51, 255);">组合产品显示逻辑补充。</span></li>
+<li><span style="color: rgb(4, 51, 255);">补充未开启多级分利时团票返利的分配逻辑。</span></li>
+<li><span style="color: rgb(4, 51, 255);">返利对象是导游时，「后返积分」选项禁用。</span></li>
+</ol>
+<div><br/></div>
+<hr/>
+<div>【目录】</div>
+<ul>
+<li>产品介绍</li>
+<li>名词定义</li>
+<li>模块说明-票务审核</li>
+<li>模块说明-加点返规则审核</li>
+<li>模块说明-产品组合</li>
+<li>模块说明-产品管理</li>
+<li>模块说明-运营报表</li>
+<li>模块说明-经营报表</li>
+<li>模块说明-渠道管理</li>
+<li>模块说明-成员管理</li>
+</ul>
+<hr/>
+<div>【产品介绍】</div>
+<ul>
+<li>该产品实质是魔方旅行社（魔方旅游）的管理后台。</li>
+<li>魔方旅行社是票之家平台的超级运营商，所有的供应商产品要走我们平台分销，就必须先把产品发布给魔方旅行社，魔方旅行社再制定渠道政策分发给分销商。</li>
+<li>该产品主要是我公司的运营部、市场部同事使用。</li>
+</ul>
+<hr/>
+<div>【名词定义】</div>
+<ul>
+<li>票务：普通景区发行的是景区门票，通常只限定检票日期；演艺景区发行的是演艺门票，演艺有固定的开始时间和结束时间，演艺门票只能在这个时间段入场，购票必须对应场次和区域（不同区域价位不同）。</li>
+<li>组合产品：为了促进更多的消费，或者带动某些产品的销售，旅游行业经常采用组合的方式销售产品。目前我们平台只支持票务间的组合，后期会支持不同产品线的组合。</li>
+<li>加点返：加点返是组合产品一种更为灵活的方式，加点返不是具体的产品，而是一个规则，如果满足规则就增加返利的意思。</li>
+<li>金币：返利的一种货币，可当现金使用。</li>
+<li>积分：返利的一种货币，只能购买「积分产品」，积分通常都会被限定只能购买指定景区产品。</li>
+<li>返利解冻：为了规范分销商的分销行为，以及避免财务上的差错，通常在确认消费后不会马上给分销商返利，而是让分销商看到返利金额，但处于冻结状态，会告知解冻时间。在检票时间和解冻时间之间，我们平台的财务部门将完成返利的对账工作，当到达解冻日后，返利自动解冻。</li>
+</ul>
+<div><br/></div>
+<hr/>
+<div>【模块说明-票务审核】</div>
+<div>相关原型页面：产品审核-票务</div>
+<div><br/></div>
+<ul>
+<li>待审核票务产品来自于景区公司的上传，通过接口获取。</li>
+<li>景区公司把票务产品的基本信息和给魔方旅行社的政策传给平台，平台审核通过之后可以设置不同的政策把产品推送给不同的分销商，从中实现盈利。</li>
+<li>景区公司提供给魔方旅行社的每一条票务信息必然包含以下内容（部分可能为空）：</li>
+</ul>
+<ol>
+<li>产品编号</li>
+<li>景区公司</li>
+<li><span style="font-family: Verdana, Arial, sans-serif; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); float: none;">景区</span></li>
+<li><span style="font-family: Verdana, Arial, sans-serif; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); float: none;">票品：团票、散票。仅有旅行社才有资质购买团票。</span></li>
+<li><span style="font-family: Verdana, Arial, sans-serif; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); float: none;">票型：当地物价局制定，通常有成人票、老年票、学生票等</span></li>
+<li><span style="font-family: Verdana, Arial, sans-serif; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); float: none;">票种：线上、线下。通过我们平台的都是线上票。</span></li>
+<li><span style="font-family: Verdana, Arial, sans-serif; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); float: none;">购票限制</span></li>
+<li><span style="font-family: Verdana, Arial, sans-serif; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); float: none;">场次（仅限演艺门票）</span></li>
+<li><span style="font-family: Verdana, Arial, sans-serif; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); float: none;">区域</span><span style="font-family: Verdana, Arial, sans-serif; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); float: none;">（仅限演艺门票）</span></li>
+<li><span style="font-family: Verdana, Arial, sans-serif; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); float: none;">有效期</span></li>
+<li><span style="font-family: Verdana, Arial, sans-serif; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); float: none;">检票次数</span></li>
+<li><span style="font-family: Verdana, Arial, sans-serif; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); float: none;">检票点</span></li>
+<li><span style="font-family: Verdana, Arial, sans-serif; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); float: none;">二维码信息</span></li>
+<li><span style="font-family: Verdana, Arial, sans-serif; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); float: none;">门市价</span></li>
+<li><span style="font-family: Verdana, Arial, sans-serif; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); float: none;">退票规则：哪些条件下允许退票</span></li>
+<li><span style="font-family: Verdana, Arial, sans-serif; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); float: none;">退票费用：可能是固定费用，也可能是票价的固定百分比</span></li>
+<li><span style="font-family: Verdana, Arial, sans-serif; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); float: none;">改票规则</span></li>
+<li><span style="font-family: Verdana, Arial, sans-serif; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); float: none;">是否支持团进团出：团进团出是导游一个人检票即可带整个团的人进入景区，无需每位游客单独检票。</span></li>
+<li><span style="font-family: Verdana, Arial, sans-serif; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); float: none;">是否要求一票一证：要求一票一证即为买多少张票就要提供多少位游客的身份证号码，票务信息将和身份证绑定</span></li>
+<li><span style="font-family: Verdana, Arial, sans-serif; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); float: none;">投放渠道（魔方旅行社）</span></li>
+<li><span style="font-family: Verdana, Arial, sans-serif; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); float: none;">建议零售价</span></li>
+<li><span style="font-family: Verdana, Arial, sans-serif; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); float: none;">返利方式</span></li>
+<li><span style="font-family: Verdana, Arial, sans-serif; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); float: none;">返利数量</span></li>
+<li><span style="font-family: Verdana, Arial, sans-serif; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); float: none;">返利结算方式</span></li>
+<li><span style="font-family: Verdana, Arial, sans-serif;"><span style="background-color: rgb(255, 255, 255);">返利结算时间</span></span></li>
+<li><span style="font-family: Verdana, Arial, sans-serif; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); float: none;">返利积分有效期</span></li>
+<li><span style="font-family: Verdana, Arial, sans-serif; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); float: none;">返利积分使用限制</span></li>
+</ol>
+<div><span style="font-family: Verdana, Arial, sans-serif;"><span style="background-color: rgb(255, 255, 255);"><br/></span></span></div>
+<ul>
+<li>以上信息并不在审核时完全呈现，给到分销端的时候会完全呈现。</li>
+<li>审核时需要呈现的字段有：</li>
+</ul>
+<ol>
+<li>产品编号</li>
+<li>景区公司</li>
+<li>景区</li>
+<li>场次</li>
+<li>区域</li>
+<li>票品</li>
+<li>票型</li>
+<li>门市价</li>
+<li>购票限制</li>
+<li>有效期</li>
+<li>检票次数</li>
+<li>建议零售价</li>
+<li>返利方式</li>
+<li>返利数量</li>
+<li>返利结算方式</li>
+<li>返利结算时间</li>
+<li>返利积分使用限制</li>
+</ol>
+<div><br/></div>
+<ul>
+<li>操作-通过：点击「通过」按钮时，弹窗进行二次确认，二次确认通过后，该产品从待审核名单中消失，进入「产品管理-票务」名单。</li>
+<li>操作-拒绝：点击「拒绝」按钮时，弹出拒绝理由输入框，200个中文字上限，确定提交拒绝理由后，该产品从待审核名单消失，连同拒绝理由推送回景区公司端口。</li>
+</ul>
+<div><br/></div>
+<hr/>
+<div>【模块说明-加点返规则审核】</div>
+<div>相关产品原型：产品审核-<span style="color: rgb(4, 51, 255);">加点返规则</span></div>
+<div><br/></div>
+<ul>
+<li>加点返的本质是一套规则而非一个/套产品，加点返规则只能赋予在已经发布的单产品（目前只有票务产品）之上，加点返不能独立存在。</li>
+<li><span style="color: rgb(4, 51, 255);">加点返规则</span>必然是两个景区的合作，这两个景区可能被同一个景区公司管辖，也可能被不同的景区公司管辖。例如两个景区公司谈好，给已经游玩过青城山景区的游客再购买峨眉山景区门票时，在原有返利基础之上再加10金币的返利。</li>
+<li><span style="color: rgb(4, 51, 255);">加点返规则</span>虽是景区公司或景区间的合作，但规则的生效是依附在具体的产品上的。所以加点返规则的元素为：前置产品+后置产品+有效期+加点返内容。</li>
+<li>加点返利由提供后置产品的景区公司提供，如果提供的加点返利是积分，加点积分的有效期和使用规则和后置产品本身返的积分相同。</li>
+<li>待审核加点返列表字段：</li>
+</ul>
+<ol>
+<li>发起景区：即后置产品的景区</li>
+<li>加点返利产品：即后置的具体产品</li>
+<li>前置景区</li>
+<li>前置景区产品</li>
+<li>有效时间：前置产品和后置产品的确认消费时间之间的间隔时间（票务产品的确认消费时间为检票时间）</li>
+<li>加点方式：即返利方式，有后返金币和后返积分两种可能</li>
+<li>加点数量：即返利数量 </li>
+</ol>
+<div><br/></div>
+<ul>
+<li>通过审核</li>
+</ul>
+<ol>
+<li>通过操作需弹窗二次确认</li>
+<li>通过之后，该条加点返利规则进入产品中心</li>
+</ol>
+<div><br/></div>
+<ul>
+<li>拒绝审核</li>
+</ul>
+<ol>
+<li>拒绝操作需弹窗填写拒绝理由，200个中文字上限</li>
+<li>确认拒绝之后该条加点返规则从待审核列表消失，连同拒绝理由一起传回给景区公司</li>
+</ol>
+<div><br/></div>
+<hr/>
+<div>【模块说明-产品组合】</div>
+<div>相关原型文档：产品组合</div>
+<div><br/></div>
+<ul>
+<li>组合产品即把多个产品组合起来进行打包销售，组合产品往往会提供比较优惠的价格或返利政策，来促进更多的消费。</li>
+<li>平台仅能对景区公司发布的「组合产品子产品」进行组合操作，普通产品不能进行组合。</li>
+<li>组合产品是由多个单独的子产品组成，我们平台也会对每个子产品进行单独的结算。</li>
+<li>组合产品子产品的字段：</li>
+</ul>
+<ol>
+<li>景区公司</li>
+<li>景区</li>
+<li>场次</li>
+<li>区域</li>
+<li>票品</li>
+<li>票型</li>
+<li>门市价</li>
+<li>可联票景区</li>
+<li>可联票方式：二联票、三联票、四联票……</li>
+<li>渠道价格：建议零售价</li>
+<li>返利方式</li>
+<li>返利数量</li>
+</ol>
+<div><br/></div>
+<ul>
+<li>可联票景区、可联票方式是进行组合的限制条件，进行组合的产品必须相互满足条件。当「选择」了一个待组合的子产品之后，待组合产品列表自动根据已选择商品的组合条件进行筛选，只呈现符合条件的子产品。</li>
+<li>如果选择了两个子产品，但可联票方式都只有「三联票」，那么进行组合按钮禁用</li>
+<li>进行组合</li>
+</ul>
+<ol>
+<li>弹出「组合名称」输入框</li>
+<li>组合名称：出现在票面上的名称，20个中文字为上限</li>
+<li>备注名称：自动生成（景区票品票型+景区票品票型……），50个中文字上限</li>
+<li>完成两个名称的提交后，视为完成组合，组合产品进入产品中心</li>
+<li><span style="color: rgb(4, 51, 255);">已组合过的子产品在待组合列表中不隐藏，不可重复组合同样的子产品。</span></li>
+</ol>
+<div><br/></div>
+<hr/>
+<div>【模块说明-产品管理】</div>
+<div>相关原型页面：产品管理</div>
+<div><br/></div>
+<ul>
+<li>进入产品管理页面的产品/规则，就是属于我们魔方旅游（魔方旅行社）的产品了，我们只要给分销渠道发布好分销政策，分销渠道就能看到并分销对应的产品了。</li>
+<li>产品管理列表呈现的字段均按照原型做。</li>
+<li>票务产品设置渠道政策：</li>
+</ul>
+<ol>
+<li>选择渠道：「渠道管理」模块建立的渠道，弹窗勾选，可多选。一个产品下只可为一个渠道设置一个政策。</li>
+<li>渠道价格：即建议零售价，不可更改。</li>
+<li>旅行社多级返利：仅票品为「团票」的产品呈现该功能，开启了多级返利之后默认返利方式禁止选择/填写。多级返利是一张票的交易给多个角色返利，可以只返利给其中两个角色。</li>
+<li><span style="color: rgb(4, 51, 255);">未开启多级返利，团票返利的优先级是部门＞旅行社＞导游。</span></li>
+<li>返利方式：前返是直接折价，结算价=建议零售价-前返金额。后返金币、积分见名称解释。（<span style="color: rgb(4, 51, 255);">当返利对象是导游时，后返积分选项隐藏</span>）</li>
+<li>返利数量</li>
+<li>返利结算方式：定时返即为在检票多少天后进行返利解冻，0天表示在检票后马上解冻。周期返即在每个月固定某一天进行返利解冻，解冻的是上个月内所有的返利，如果周期返是每月5号，那么在12月5号解冻的是11月1号-11月30号的返利。</li>
+<li>当所有的渠道都已经有了对应的政策之后，不可再新增政策。</li>
+</ol>
+<div><br/></div>
+<ul>
+<li>组合产品设置渠道政策：</li>
+</ul>
+<ol>
+<li>与票务产品设置渠道政策一样，只是要给每个子产品单独设置政策。</li>
+</ol>
+<div><br/></div>
+<ul>
+<li>加点返规则设置渠道政策：</li>
+</ul>
+<ol>
+<li>渠道不再是一条一条的添加，而是继承后置产品已经发布了政策的渠道，全部直接呈现出来且不可修改。</li>
+<li>是否开启多级返利、返利方式均继承后置产品的设置，且不可更改。</li>
+<li>加点返利数量：如果不填写，则为该渠道暂时不发布加点返利规则。</li>
+</ol>
+<div><br/></div>
+<hr/>
+<div>【模块说明-经营报表】</div>
+<div>【模块说明-运营报表】</div>
+<div>详见原型，我和于涛详细整理了一份报表说明，当和相关同事确认了报表相关字段的定义后，将补充这部分文档。</div>
+<div><br/></div>
+<hr/>
+<div><br/></div>
+<div><br/></div>
+<div>【模块说明-渠道管理】</div>
+<div>相关原型页面-渠道管理、名单管理</div>
+<div><br/></div>
+<ul>
+<li>渠道是把分销商进行分组的方式</li>
+<li>在「票之家支撑平台」审核了用户之后，会将有分销商权限的用户进行第一次渠道分组。</li>
+<li>所有的用户都是被分进「渠道」，所有的产品政策也是发给「渠道」的，和渠道分类方式无关，渠道分类方式只是用来标注渠道的。</li>
+<li>目前只允许建一个渠道分类方式，渠道分类方式下可以有多个渠道</li>
+<li>点击渠道分类方式的名称，弹出编辑窗，可以对渠道分类方式和渠道的名称进行编辑，也可以增加渠道。</li>
+<li>渠道分类方式和渠道名的上限是20个中文字。</li>
+<li>一个分销商只能归属于一个渠道。</li>
+<li>名单管理：呈现信息见原型列表，「管理渠道」即编辑该分销商所在的渠道。</li>
+</ul>
+<div><br/></div>
+<hr/>
+<div>
+<div>【模块说明-成员权限】</div>
+<div>相关原型页面：成员管理</div>
+<div><br/></div>
+<div><br/></div>
+<ul>
+<li>默认有一个超级管理员账号，负责初始的权限管理</li>
+<li>权限管理</li>
+</ul>
+<ol>
+<li>权限名称：10中文字上限，不可重名</li>
+<li>URL：必须是某一个导航栏的url</li>
+<li>访问限制：只能访问权限内的url（仅限导航部分）</li>
+</ol>
+<div><br/></div>
+<ul>
+<li>岗位管理</li>
+</ul>
+<ol>
+<li>岗位名称：10中文字上限，不可重名</li>
+<li>权限：可多选</li>
+</ol>
+<div><br/></div>
+<ul>
+<li>增加成员</li>
+</ul>
+<ol>
+<li>账号：允许英文和数字，20上限</li>
+<li>密码：6-20位，明文录入</li>
+<li>姓名：5中文字上限</li>
+<li>岗位：单选</li>
+</ol>
+<div><br/></div>
+<ul>
+<li>管理成员</li>
+</ul>
+<ol>
+<li>账号不可修改</li>
+<li>密码栏默认为空，录入密码并保存视为修改新密码</li>
+<li>姓名、岗位可修改</li>
+</ol>
+<div><br/></div>
+</div>
+<hr/>
+<div>注销登录：点击该按钮后回到登录页面，账号默认填充，密码为空。</div>
+</body></html>
